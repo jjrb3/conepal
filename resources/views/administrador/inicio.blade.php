@@ -1,0 +1,1 @@
+<a href="usuario/consultar">Usuario</a> - <a href="informacion">Informacion de la pagina</a> - <a href="bienes">Bienes Inmuebles</a>
