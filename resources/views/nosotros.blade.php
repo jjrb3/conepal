@@ -1,4 +1,4 @@
-@extends('temas.stids1')
+@extends('tema.stids1')
 
 @section('content')
 	<section id="top_content" class="top_cont_outer">

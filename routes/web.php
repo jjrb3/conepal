@@ -13,10 +13,12 @@
 
 // Usuario
 Route::get('/{pagina}','InformacionPaginaController@Consultar');
-Route::post('/verificar/login','UsuarioController@VerificarUsuario');
+//Route::post('/verificar/login','UsuarioController@VerificarUsuario');
 
 // Administracion
 Route::get('/administrador/inicio',function(){
     return View::make('administrador.inicio');
 });
 Route::get('/administrador/{carpeta}/{pagina}','NavegacionAdministradorController@Navegar');
+
+Route::post('/administrador/usuario/consultar/registrar','UsuarioController@getGuardarUsuario');

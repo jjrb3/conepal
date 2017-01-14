@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
 {
-    public function VerificarUsuario(Request $request) {
+    public function getGuardarUsuario(Request $request) {
 
-    	$datos = $request->all();
+        return 'jeremy';
+    	/*$datos = $request->all();
 
     	if ($usuario) {
 
@@ -36,6 +37,6 @@ class UsuarioController extends Controller
 		// Olvidar session
 		$request->session()->forget('email');
 
-    	return $request->session()->get('email');
+    	return $request->session()->get('email');*/
     }
 }

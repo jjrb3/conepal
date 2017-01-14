@@ -1,4 +1,4 @@
-@extends('temas.stids1')
+@extends('tema.stids1')
 
 @section('content')
 	<!-- Que hacemos -->
