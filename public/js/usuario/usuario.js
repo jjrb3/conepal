@@ -12,72 +12,50 @@ $(document).ready(function(){
 
         $("#mensaje").html('<center><img src="'+$("#ruta").val()+'tema/images/cargando.gif" width="50px"></center>');
 
-        var usuario     = $("#usuario").val();
-        var clave 	    = $("#clave").val();
-        var nombres 	= $("#nombres").val();
-        var apellidos 	= $("#apellidos").val();
-        var email 	    = $("#email").val();
 
-        usuario = usuario.trim();
+        $.getJSON('consultar/registrar',{   usuario:$("#usuario").val(),
+                                            clave:$("#clave").val(),
+                                            nombres:$("#nombres").val(),
+                                            apellidos:$("#apellidos").val(),
+                                            email:$("#email").val()},function(data){
 
-        if (!usuario) {
-
-            mensajeAdvertencia("mensaje","Debe ingresar el campo usuario para continuar");
-            return false;
-        }
-
-        if (!clave) {
-
-            mensajeAdvertencia("mensaje","Debe ingresar el campo contraseña para continuar");
-            return false;
-        }
-
-        if (!nombres) {
-
-            mensajeAdvertencia("mensaje","Debe ingresar el campo nombres para continuar");
-            return false;
-        }
-
-        if (!apellidos) {
-
-            mensajeAdvertencia("mensaje","Debe ingresar el campo apellidos para continuar");
-            return false;
-        }
-
-        if (!email) {
-
-            mensajeAdvertencia("mensaje","Debe ingresar el campo email para continuar");
-            return false;
-        }
-
-        $.post('consultar/registrar',{  usuario:usuario,
-                                        clave:clave,
-                                        nombres:nombres,
-                                        apellidos:apellidos,
-                                        email:email},function(data){
-
-            alert(data)
-            /*if (data == 0) {
-
-             mensajeError("mensaje","No se encontró el usuario.");
-             return false;
-             }
-             else if (data == -1) {
-
-             mensajeError("mensaje","La contraseña no es correcta.");
-             return false;
-             }
-             else if(data == 1){
-
-             mensajeRealizado("mensaje","Ingresando a Sitds S.A.S. Espere un momento por favor.");
-
-             setTimeout(function(){ location.assign("inicio/index.php"); }, 1000);
-
-             }
-             else {
-             mensajeError("mensaje","Se encontraron errores al ingresar a la plataforma.");
-             return false;
-             }*/
+            switch(data.resultado) {
+                case 1:
+                    mensajeRealizado("mensaje",data.mensaje);
+                    break;
+                case 0:
+                    mensajeAdvertencia("mensaje",data.mensaje);
+                    break;
+                case -1:
+                    mensajeAdvertencia("mensaje",data.mensaje);
+                    break;
+                case -2:
+                    mensajeError("mensaje",data.mensaje);
+                    break;
+            }
         });
     });
+
+    function buscarUsuario() {
+
+        $("#tabla").html('<center><img src="'+$("#ruta").val()+'tema/images/cargando.gif" width="50px"></center>');
+
+        $.getJSON('consultar/buscar',{},function(data){
+
+            switch(data.resultado) {
+                case 1:
+                    mensajeRealizado("mensaje",data.mensaje);
+                    break;
+                case 0:
+                    mensajeAdvertencia("mensaje",data.mensaje);
+                    break;
+                case -1:
+                    mensajeAdvertencia("mensaje",data.mensaje);
+                    break;
+                case -2:
+                    mensajeError("mensaje",data.mensaje);
+                    break;
+            }
+        });
+    }
 });

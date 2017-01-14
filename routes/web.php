@@ -21,4 +21,5 @@ Route::get('/administrador/inicio',function(){
 });
 Route::get('/administrador/{carpeta}/{pagina}','NavegacionAdministradorController@Navegar');
 
-Route::post('/administrador/usuario/consultar/registrar','UsuarioController@getGuardarUsuario');
+Route::get('/administrador/usuario/consultar/registrar','UsuarioController@GuardarUsuario');
+Route::get('/administrador/usuario/consultar/buscar','UsuarioController@ConsultarUsuario');

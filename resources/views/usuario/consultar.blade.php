@@ -14,22 +14,24 @@
         <br>
         <div id="mensaje"></div>
         <br>
-        <table border="1">
-            <thead>
-                <td>Usuario</td>
-                <td>Nombres</td>
-                <td>Apellido</td>
-                <td>Email</td>
-                <td>Opciones</td>
-            </thead>
-            <tbody>
-                <td>Usuario</td>
-                <td>Nombres</td>
-                <td>Apellido</td>
-                <td>Email</td>
-                <td>Opciones</td>
-            </tbody>
-        </table>
+        <div id="tabla">
+            <table border="1">
+                <thead>
+                    <td>Usuario</td>
+                    <td>Nombres</td>
+                    <td>Apellido</td>
+                    <td>Email</td>
+                    <td>Opciones</td>
+                </thead>
+                <tbody>
+                    <td>Usuario</td>
+                    <td>Nombres</td>
+                    <td>Apellido</td>
+                    <td>Email</td>
+                    <td>Opciones</td>
+                </tbody>
+            </table>
+        </div>
     </form>
 
 <script type="text/javascript" src="{{asset('js/usuario/usuario.js')}}"></script>
