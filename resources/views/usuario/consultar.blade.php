@@ -35,5 +35,6 @@
     </form>
 
 <script type="text/javascript" src="{{asset('js/usuario/usuario.js')}}"></script>
+<script>buscarUsuario()</script>
 @endsection
 

@@ -44,6 +44,12 @@ class UsuarioController extends Controller
                 'mensaje' => 'Debe ingresar el campo email para continuar',
             ));
         }
+        elseif (!filter_var($request->get('email'), FILTER_VALIDATE_EMAIL)) {
+            return response()->json(array(
+                'resultado' => -1,
+                'mensaje' => 'El correo digitado no es correcto',
+            ));
+        }
 
         $usuario = new Usuario;
         $usuario->usuario = trim($request->get('usuario'));
@@ -85,7 +91,7 @@ class UsuarioController extends Controller
                 return response()->json(array(
                     'resultado' => 1,
                     'mensaje'   => 'Se econtraron datos',
-                    'json'      => $usuario
+                    'json'      => $Usuario
                 ));
             }
             else {

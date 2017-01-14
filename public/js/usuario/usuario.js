@@ -22,6 +22,7 @@ $(document).ready(function(){
             switch(data.resultado) {
                 case 1:
                     mensajeRealizado("mensaje",data.mensaje);
+                    buscarUsuario();
                     break;
                 case 0:
                     mensajeAdvertencia("mensaje",data.mensaje);
@@ -35,8 +36,12 @@ $(document).ready(function(){
             }
         });
     });
+});
 
-    function buscarUsuario() {
+
+function buscarUsuario() {
+
+    $(document).ready(function(){
 
         $("#tabla").html('<center><img src="'+$("#ruta").val()+'tema/images/cargando.gif" width="50px"></center>');
 
@@ -44,18 +49,45 @@ $(document).ready(function(){
 
             switch(data.resultado) {
                 case 1:
-                    mensajeRealizado("mensaje",data.mensaje);
+                    $('#tabla').html('');   // Quitamos el cargando
+
+                    // Titulo de la tabla
+                    $('#tabla').append('<table>');
+                    $('#tabla').append('<tr>');
+                    $('#tabla').append('<td>Usuario</td>');
+                    $('#tabla').append('<td>Nombres</td>');
+                    $('#tabla').append('<td>Apellidos</td>');
+                    $('#tabla').append('<td>Correo</td>');
+                    $('#tabla').append('<td>Estado</td>');
+                    $('#tabla').append('/<tr>');
+
+                    // Datos de la tabla
+                    jQuery.each(data.json, function(i, val) {
+                        $('#tabla').append('<tr>');
+                        $('#tabla').append('<td>'+val.usuario+'</td>');
+                        $('#tabla').append('<td>'+val.nombres+'</td>');
+                        $('#tabla').append('<td>'+val.apellidos+'</td>');
+                        $('#tabla').append('<td>'+val.correo+'</td>');
+                        if(val.estado == 1) {
+                            $('#tabla').append('<td>Activo</td>');
+                        }
+                        else {
+                            $('#tabla').append('<td>Inactivo</td>');
+                        }
+                        $('#tabla').append('/<tr>');
+                    });
+                    $('#tabla').append('</table>');
                     break;
                 case 0:
-                    mensajeAdvertencia("mensaje",data.mensaje);
+                    mensajeAdvertencia("tabla",data.mensaje);
                     break;
                 case -1:
-                    mensajeAdvertencia("mensaje",data.mensaje);
+                    mensajeAdvertencia("tabla",data.mensaje);
                     break;
                 case -2:
-                    mensajeError("mensaje",data.mensaje);
+                    mensajeError("tabla",data.mensaje);
                     break;
             }
         });
-    }
-});
+    });
+}
