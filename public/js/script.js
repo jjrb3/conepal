@@ -21,7 +21,7 @@ function mensajeError(id,mensaje){
 	codigoMensaje  = '<div class="alert alert-dismissable alert-danger">';
 	codigoMensaje += '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
 	codigoMensaje += '<center>';
-	codigoMensaje += '<i class="fa fa-exclamation-triangle fa-2x"></i> ';
+	codigoMensaje += '<i class="glyphicon glyphicon-exclamation-sign" style="font-size: 30px"></i> ';
 	codigoMensaje += '<br>';
 	codigoMensaje += mensaje;
 	codigoMensaje += '</center>';
@@ -35,7 +35,7 @@ function mensajeRealizado(id,mensaje){
 	codigoMensaje  = '<div class="alert alert-dismissable alert-success">';
 	codigoMensaje += '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
 	codigoMensaje += '<center>';
-	codigoMensaje += '<i class="fa fa-check-circle fa-2x"></i> ';
+	codigoMensaje += '<i class="glyphicon glyphicon-ok-sign" style="font-size: 30px"></i> ';
 	codigoMensaje += '<br>';
 	codigoMensaje += mensaje;
 	codigoMensaje += '</center>';
@@ -50,7 +50,7 @@ function mensajeAdvertencia(id,mensaje){
 	codigoMensaje  = '<div class="alert alert-dismissable alert-warning">';
 	codigoMensaje += '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
 	codigoMensaje += '<center>';
-	codigoMensaje += '<i class="fa fa-exclamation-triangle fa-2x"></i> ';
+	codigoMensaje += '<i class="glyphicon glyphicon-exclamation-sign" style="font-size: 30px"></i> ';
 	codigoMensaje += '<br>';
 	codigoMensaje += mensaje;
 	codigoMensaje += '</center>';
@@ -64,7 +64,7 @@ function mensajeInformacion(id,mensaje){
 	codigoMensaje  = '<div class="alert alert-dismissable alert-info">';
 	codigoMensaje += '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>';
 	codigoMensaje += '<center>';
-	codigoMensaje += '<i class="fa fa-info fa-2x"></i> ';
+	codigoMensaje += '<i class="glyphicon glyphicon-info-sign" style="font-size: 30px"></i> ';
 	codigoMensaje += '<br>';
 	codigoMensaje += mensaje;
 	codigoMensaje += '</center>';

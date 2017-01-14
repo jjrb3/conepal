@@ -23,6 +23,7 @@ $(document).ready(function(){
                 case 1:
                     mensajeRealizado("mensaje",data.mensaje);
                     buscarUsuario();
+                    document.getElementById("fomrUsuario").reset();
                     break;
                 case 0:
                     mensajeAdvertencia("mensaje",data.mensaje);
@@ -49,34 +50,35 @@ function buscarUsuario() {
 
             switch(data.resultado) {
                 case 1:
-                    $('#tabla').html('');   // Quitamos el cargando
+                    var tabla = '';
+
+                    $('#tabla').html(tabla);   // Quitamos el cargando
 
                     // Titulo de la tabla
-                    $('#tabla').append('<table>');
-                    $('#tabla').append('<tr>');
-                    $('#tabla').append('<td>Usuario</td>');
-                    $('#tabla').append('<td>Nombres</td>');
-                    $('#tabla').append('<td>Apellidos</td>');
-                    $('#tabla').append('<td>Correo</td>');
-                    $('#tabla').append('<td>Estado</td>');
-                    $('#tabla').append('/<tr>');
+                    tabla = tabla + '<div class="table-responsive"><table class="table"><thead><tr><th>Usuario</th><th>Nombres</th><th>Apellidos</th><th>Email</th><th>Estado</th><th>Opciones</th></tr></thead></div>';
 
                     // Datos de la tabla
                     jQuery.each(data.json, function(i, val) {
-                        $('#tabla').append('<tr>');
-                        $('#tabla').append('<td>'+val.usuario+'</td>');
-                        $('#tabla').append('<td>'+val.nombres+'</td>');
-                        $('#tabla').append('<td>'+val.apellidos+'</td>');
-                        $('#tabla').append('<td>'+val.correo+'</td>');
+                        tabla = tabla + '<tbody><tr>';
+                        tabla = tabla + '<td>'+val.usuario+'</td>';
+                        tabla = tabla + '<td>'+val.nombres+'</td>';
+                        tabla = tabla + '<td>'+val.apellidos+'</td>';
+                        tabla = tabla + '<td>'+val.correo+'</td>';
                         if(val.estado == 1) {
-                            $('#tabla').append('<td>Activo</td>');
+                            tabla = tabla + '<td>Activo</td>';
                         }
                         else {
-                            $('#tabla').append('<td>Inactivo</td>');
+                            tabla = tabla + '<td>Inactivo</td>';
                         }
-                        $('#tabla').append('/<tr>');
+                        tabla = tabla + '<td><a href="#"><span class="glyphicon glyphicon glyphicon-pencil"></span></a>  /   <a href="#"><span class="glyphicon glyphicon glyphicon-remove"></span></a></td>';
+                        tabla = tabla + '</tr></tbody>';
                     });
-                    $('#tabla').append('</table>');
+
+                    tabla = tabla + '</table></div>';
+
+
+                    $('#tabla').append(tabla);
+
                     break;
                 case 0:
                     mensajeAdvertencia("tabla",data.mensaje);

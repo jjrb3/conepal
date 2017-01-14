@@ -1,0 +1,13 @@
+.navbar-inverse {
+    background-color: #000;
+    border-color: #080808;
+}
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #9ed760;
+    border-color: #9ed760;
+}
+
+.panel-primary {
+    border-color: #9ed760;
+}
