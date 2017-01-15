@@ -26,13 +26,12 @@
                 </div>
             </a>
 
-            <a href="bienes/inicio">
+            <a href="bienesInmuebles/inicio">
                 <div class="col-sm-4"> <div class="panel panel-primary">
                         <div class="panel-heading">Bienes & Inmuebles</div>
                         <div class="panel-body">Para cambiar imagenes, estados y valores hacer click sobre este panel</div>
                     </div>
                 </div>
-
             </a>
 
         </div>
