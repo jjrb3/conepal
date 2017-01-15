@@ -20,7 +20,7 @@
         </div>
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span>Hola</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span>Hola, {{$nombres}}</a></li>
             <li><a href="{{asset('administrador/cerrarSession')}}"><span class="glyphicon glyphicon-log-in"></span> Cerrar sessión</a></li>
         </ul>
     </div>

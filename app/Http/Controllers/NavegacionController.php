@@ -22,7 +22,7 @@ class NavegacionController extends Controller
 
     public function Administrador(Request $request,$carpeta,$pagina) {
 
-        return !$request->session()->get('nombres') ? redirect('/inicio') : View("$carpeta.$pagina");
+        return !$request->session()->get('nombres') ? redirect('/inicio') : View("$carpeta.$pagina",['nombres' => $request->session()->get('nombres')]);
     }
 
     public function Usuario($pagina) {

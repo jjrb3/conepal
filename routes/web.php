@@ -11,14 +11,16 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::get('/{pagina}','NavegacionController@Usuario');
 Route::get('/administrador/{carpeta}/{pagina}','NavegacionController@Administrador');
 Route::post('/ingresar/verificar','SesionController@VerificarUsuario');
 Route::get('/administrador/cerrarSession','SesionController@CerrarSesion');
 
 // Administracion
-Route::get('/administrador/inicio',function(){
-    return View::make('administrador.inicio');
+Route::get('/administrador/inicio',function(Request $request){
+    return View::make('administrador.inicio',['nombres' => $request->session()->get('nombres')]);
 });
 
 // Sesion de usuario
