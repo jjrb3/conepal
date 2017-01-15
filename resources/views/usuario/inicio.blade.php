@@ -43,6 +43,43 @@
                     </div>
                 </div>
             </form>
+            <!-- Actualizar -->
+            <div class="form-horizontal"  id="fomrUsuarioActualizar" style="display: none;">
+                <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" id="ruta" value="{{asset('')}}">
+                <input type="hidden" id="usuarioId" value="">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Usuarios:</label>
+                    <div class="col-sm-3">
+                        <input type="text" id="usuarioActualizar" class="form-control" placeholder="Ingresar Usuario">
+                    </div>
+                    <label class="control-label col-sm-2" for="pwd">Contraseña:</label>
+                    <div class="col-sm-3">
+                        <input type="password" id="claveActualizar" class="form-control"placeholder="Ingrese su pass">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Nombres:</label>
+                    <div class="col-sm-3">
+                        <input type="text" id="nombresActualizar" class="form-control"placeholder="Ingrese sus nombres">
+                    </div>
+                    <label class="control-label col-sm-2" for="email">Apellidos:</label>
+                    <div class="col-sm-3">
+                        <input type="text" id="apellidosActualizar" class="form-control" placeholder="Ingrese sus Apellidos">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Email:</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="emailActualizar" placeholder="Ingrese su email">
+                    </div>
+                    <div class="col-sm-offset-2 col-sm-4">
+                        <button class="btn btn-default" onclick="volver()">Cancelar</button>
+                        <button class="btn btn-default" onclick="actualizar()">Actualizar Usuario</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Actualizar -->
             <div id="mensaje"></div>
             <br>
             <div id="tabla">

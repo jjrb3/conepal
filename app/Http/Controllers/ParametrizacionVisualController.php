@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ParametrizacionVisualController extends Controller
 {
-	var $seleccion	= ' class="current" ';
+	var $seleccion	= ' class="active" ';
 	var $menu 		= "";
 	var $pie 		= "";
 

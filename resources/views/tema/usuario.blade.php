@@ -1,83 +1,110 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, maximum-scale=1">
-	<title>{{$InfPag['NOMBRE_CABECERA']}}</title>
-	<meta name="csrf-token" content="{{ csrf_token() }}" />
-	<link rel="icon" href="{{asset('stids1/img/favicon.png')}}" type="image/png">
-	<link href="{{asset('stids1/css/bootstrap.css')}}" rel="stylesheet" type="text/css">
-	<link href="{{asset('stids1/css/style.css')}}" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link href="{{asset('stids1/css/linecons.css')}}" rel="stylesheet" type="text/css">
-	<link href="{{asset('stids1/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
-	<link href="{{asset('stids1/css/nuestro_equipo.css')}}" rel="stylesheet" type="text/css">
-	<link href="{{asset('stids1/css/animate.css')}}" rel="stylesheet" type="text/css">
-	<link href='http://fonts.googleapis.com/css?family=Lato:400,900,700,700italic,400italic,300italic,300,100italic,100,900italic' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Dosis:400,500,700,800,600,300,200' rel='stylesheet' type='text/css'>
+	<title>Conipal</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<script type="text/javascript" src="{{asset('stids1/js/jquery.1.8.3.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('stids1/js/bootstrap.js')}}"></script>
-	<script type="text/javascript" src="{{asset('stids1/js/jquery-scrolltofixed.js')}}"></script>
-	<script type="text/javascript" src="{{asset('stids1/js/jquery.easing.1.3.js')}}"></script>
-	<script type="text/javascript" src="{{asset('stids1/js/jquery.isotope.js')}}"></script>
-	<script type="text/javascript" src="{{asset('stids1/js/wow.js')}}"></script>
-	<script type="text/javascript" src="{{asset('stids1/js/classie.js')}}"></script>
+	<link rel="stylesheet" href="{{asset('tema/assets/bootstrap/css/bootstrap.css')}}" />
+	<link rel="stylesheet" href="{{asset('tema/assets/style.css')}}"/>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="{{asset('tema/assets/bootstrap/js/bootstrap.js')}}"></script>
+	<script src="{{asset('tema/assets/script.js')}}"></script>
 
-	<script type="text/javascript">
-		$(document).ready(function(e) {
-	        $('.res-nav_click').click(function(){
-				$('ul.toggle').slideToggle(600)	
-			});	
-				
-			$(document).ready(function() {
-				$(window).bind('scroll', function() {
+	<!-- Owl stylesheet -->
+	<link rel="stylesheet" href="{{asset('tema/assets/owl-carousel/owl.carousel.css')}}">
+	<link rel="stylesheet" href="{{asset('tema/assets/owl-carousel/owl.theme.css')}}">
+	<script src="{{asset('tema/assets/owl-carousel/owl.carousel.js')}}"></script>
+	<!-- Owl stylesheet -->
 
-					if ($(window).scrollTop() > 0) {
-						$('#header_outer').addClass('fixed');
-					}
-					else {
-						$('#header_outer').removeClass('fixed');
-					}
-	    		});
-		  	});	  
-		});	
-		
-		function resizeText() {
-			var preferredWidth = 767;
-			var displayWidth = window.innerWidth;
-			var percentage = displayWidth / preferredWidth;
-			var fontsizetitle = 25;
-			var newFontSizeTitle = Math.floor(fontsizetitle * percentage);
-			$(".divclass").css("font-size", newFontSizeTitle)
-		}
-	</script>
+	<!-- slitslider -->
+	<link rel="stylesheet" type="text/css" href="{{asset('tema/assets/slitslider/css/style.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('tema/assets/slitslider/css/custom.css')}}" />
+	<script type="text/javascript" src="{{asset('tema/assets/slitslider/js/modernizr.custom.79639.js')}}"></script>
+	<script type="text/javascript" src="{{asset('tema/assets/slitslider/js/jquery.ba-cond.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('tema/assets/slitslider/js/jquery.slitslider.js')}}"></script>
+	<!-- slitslider -->
 </head>
 <body>
-	<!-- Cabecera -->
-	<header>
-		<div id="header">
-		    <!-- Logo -->
-		    <h1><a href="inicio" id="logo"><img src="stids1/img/icono.png"></a></h1>
-
-		    <!-- Nav -->
-		    <nav id="nav">
-		        <ul>
-		            <?=$menu;?>
-		        </ul>
-		    </nav>
+	<!-- Header Starts -->
+	<div class="navbar-wrapper">
+		<div class="navbar-inverse" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<!-- Nav Starts -->
+				<div class="navbar-collapse  collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<?=$menu;?>
+					</ul>
+				</div>
+				<!-- #Nav Ends -->
+			</div>
 		</div>
-    </header>
-    <!-- Fin cabecera -->
+	</div>
+	<!-- #Header Starts -->
+	<div class="container">
+		<!-- Header Starts -->
+		<div class="header">
+			<a href="index.php"><img src="tema/images/logo.png" alt="Realestate"></a>
+			<ul class="pull-right">
+				<li><a href="buysalerent.php">Compradas</a></li>
+				<li><a href="buysalerent.php">En venta</a></li>
+				<li><a href="buysalerent.php">Alquiler</a></li>
+			</ul>
+		</div>
+		<!-- #Header Starts -->
+	</div>
+	<!-- Fin cabecera -->
 
 	@yield('content')
 	
 	<!-- Pie de pagina -->
-	<footer>
- 		<div class="footer">
-			<?=$pie;?>
+	<div class="footer">
+		<div class="container">
+			<div class="row">
+				<center>
+					<div class="col-lg-3 col-sm-3">
+						<h4>Menus</h4>
+						<ul class="row">
+							<li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.php">Nosotros</a></li>
+							<li class="col-lg-12 col-sm-12 col-xs-3"><a href="agents.php">Agents</a></li>
+							<li class="col-lg-12 col-sm-12 col-xs-3"><a href="blog.php">Blog</a></li>
+							<li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contácto</a></li>
+						</ul>
+					</div>
+
+					<div class="col-lg-3 col-sm-3">
+						<h4>Nosotros</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec hendrerit augue. Proin vel metus cursus, dictum risus sit amet, vestibulum tellus. Nam dictum id nisl eget faucibus.</p>
+					</div>
+
+					<div class="col-lg-3 col-sm-3">
+						<h4>Siguenos</h4>
+						<a href="#"><img src="tema/images/facebook.png" alt="facebook"></a>
+						<a href="#"><img src="tema/images/twitter.png" alt="twitter"></a>
+						<a href="#"><img src="tema/images/instagram.png" alt="instagram"></a>
+					</div>
+
+					<div class="col-lg-3 col-sm-3">
+						<h4>Contácto</h4>
+						<p><b>Bootstrap Realestate Inc.</b><br>
+							<span class="glyphicon glyphicon-map-marker"></span> Cr27#72-80, Barranquilla <br>
+							<span class="glyphicon glyphicon-envelope"></span> Informacion@conipal.info<br>
+							<span class="glyphicon glyphicon-earphone"></span> (035) 3622386 - (+57) 300 294 6261</p>
+					</div>
+				</center>
+			</div>
+			<center>
+				<p class="copyright">2017 Stids.com.co	</p>
+			</center>
 		</div>
-	</footer>
- 	<!-- Pie de pagina -->
+	</div>
 </body>
 </html>

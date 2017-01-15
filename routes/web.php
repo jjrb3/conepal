@@ -11,15 +11,18 @@
 |
 */
 
-// Usuario
-Route::get('/{pagina}','InformacionPaginaController@Consultar');
-//Route::post('/verificar/login','UsuarioController@VerificarUsuario');
+Route::get('/{pagina}','NavegacionController@Usuario');
+Route::get('/administrador/{carpeta}/{pagina}','NavegacionController@Administrador');
+Route::get('/verificar/login','UsuarioController@VerificarUsuario');
 
 // Administracion
 Route::get('/administrador/inicio',function(){
     return View::make('administrador.inicio');
 });
-Route::get('/administrador/{carpeta}/{pagina}','NavegacionAdministradorController@Navegar');
 
-Route::get('/administrador/usuario/consultar/registrar','UsuarioController@GuardarUsuario');
-Route::get('/administrador/usuario/consultar/buscar','UsuarioController@ConsultarUsuario');
+// Sesion de usuario
+Route::post('/administrador/usuario/inicio/buscar','UsuarioController@ConsultarUsuario');
+Route::post('/administrador/usuario/inicio/buscar/id','UsuarioController@ConsultarUsuarioId');
+Route::post('/administrador/usuario/inicio/registrar','UsuarioController@GuardarUsuario');
+Route::post('/administrador/usuario/inicio/actualizar','UsuarioController@ActualizarUsuario');
+Route::post('/administrador/usuario/inicio/deshabilitar','UsuarioController@DeshabilitarUsuario');
