@@ -38,7 +38,7 @@
                         <input type="text" class="form-control" id="email" placeholder="Ingrese su email">
                     </div>
                     <div class="col-sm-offset-2 col-sm-2">
-                        <button type="submit" class="btn btn-default">Crear Usuario</button>
+                        <button type="submit" class="btn btn-danger">Crear Usuario</button>
                     </div>
                 </div>
             </form>
@@ -74,15 +74,20 @@
                     </div>
                     <div class="col-sm-offset-2 col-sm-4">
                         <button class="btn btn-default" onclick="volver()">Cancelar</button>
-                        <button class="btn btn-default" onclick="actualizar()">Actualizar Usuario</button>
+                        <button class="btn btn-danger" onclick="actualizar()">Actualizar Usuario</button>
                     </div>
                 </div>
             </div>
             <!-- Actualizar -->
             <div id="mensaje"></div>
             <br>
-            <div id="tabla">
+            <div class="col-sm-12"> <div class="panel panel-primary">
+                    <div class="panel-heading">Listado de usuario</div>
+                    <div id="tabla">
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </div>

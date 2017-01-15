@@ -29,3 +29,6 @@ Route::post('/administrador/usuario/inicio/buscar/id','UsuarioController@Consult
 Route::post('/administrador/usuario/inicio/registrar','UsuarioController@GuardarUsuario');
 Route::post('/administrador/usuario/inicio/actualizar','UsuarioController@ActualizarUsuario');
 Route::post('/administrador/usuario/inicio/deshabilitar','UsuarioController@DeshabilitarUsuario');
+
+// Sesion de información
+Route::post('/administrador/informacion/inicio/actualizar','InformacionPaginaController@ActualizarInformacionPagina');

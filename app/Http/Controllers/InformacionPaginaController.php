@@ -5,41 +5,51 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\InformacionPagina;
-use App\Imagen;
-use App\Team;
-use App\Usuario;
-use App\Rol;
-use App\Persona;
 
 use App\Http\Controllers\ParametrizacionVisual;
 
 class InformacionPaginaController extends Controller
 {
-	public function Consultar($pagina) {
-
-		$ParVis = new ParametrizacionVisualController();
-
-		// Consulta
-		$InfPag = InformacionPagina::findOrFail(1);
-		$InfPag = InformacionPagina::where('ID', '=', 1)->firstOrFail();
-		$Banner = Imagen::where('ID_TIPO_IMAGEN', '=', 6)->orderBy('ORDEN', 'ASC')->get();
-		$Servic = Imagen::where('ID_TIPO_IMAGEN', '=', 7)->orderBy('ORDEN', 'ASC')->get();    
-		$Equipo = Team::join('USUARIO','TEAM.ID_USUARIO','=','USUARIO.ID')
-					  ->join('ROL','USUARIO.ID_ROL','=','ROL.ID')
-					  ->join('PERSONA','USUARIO.ID_PERSONA','=','PERSONA.ID')
-					  ->select('PERSONA.NOMBRES','PERSONA.APELLIDOS','PERSONA.RUTA_IMAGEN','PERSONA.MENSAJE','ROL.NOMBRE')
-					  ->where('ROL.ESTADO','=','1')
-					  ->where('PERSONA.ESTADO','=','1')
-					  ->where('USUARIO.ESTADO','=','1')
-					  ->orderBy('TEAM.ORDEN','ASC')->get();
-
-		
-		return view($pagina, ['InfPag'  => $InfPag->toArray(),
-							  'menu'    => $ParVis->publicarMenu($pagina),
-							  'pie'		=> $ParVis->publicarPiePagina(),
-							  'banner'  => $Banner->toArray(),
-							  'servi'   => $Servic->toArray(),
-							  'equipo'  => $Equipo->toArray()]);
-		
+	public static function ConsultarInformacionPagina() {
+		try {
+            return InformacionPagina::where('id','=','1')->get()->toArray();
+        } catch (Exception $e) {
+            return 'Grave error: ' . $e;
+        }
 	}
+
+    public function ActualizarInformacionPagina(Request $request)
+    {
+        $informacionPagina = InformacionPagina::Find($request->get('id'));
+
+        $informacionPagina->telefono        = $request->get('telefono');
+        $informacionPagina->correo_contacto = $request->get('correo');
+        $informacionPagina->direccion       = $request->get('direccion');
+        $informacionPagina->ciudad          = $request->get('ciudad');
+        $informacionPagina->nosotros        = $request->get('nosortos');
+        $informacionPagina->que_hacemos      = $request->get('queHacemos');
+        $informacionPagina->mision          = $request->get('mision');
+        $informacionPagina->vision          = $request->get('vision');
+        $informacionPagina->valores         = $request->get('valores');
+
+        try {
+            if ($informacionPagina->save()) {
+                return response()->json(array(
+                    'resultado' => 1,
+                    'mensaje' => 'Se actualizó la informacion de la pagina correctamente',
+                ));
+            } else {
+                return response()->json(array(
+                    'resultado' => 0,
+                    'mensaje' => 'Se encontraron problemas al actualizar la información de la pagina',
+                ));
+            }
+        } catch (Exception $e) {
+            return response()->json(array(
+                'resultado' => -1,
+                'mensaje' => 'Grave error: ' . $e,
+            ));
+        }
+
+    }
 }

@@ -18,7 +18,7 @@
                     </div></div>
             </a>
 
-            <a href="informacion/consultar">
+            <a href="informacion/inicio">
                 <div class="col-sm-4"> <div class="panel panel-primary">
                         <div class="panel-heading">Información de pagina</div>
                         <div class="panel-body">Para cambiar toda la información de la pagina hacer click sobre este panel</div>
@@ -26,7 +26,7 @@
                 </div>
             </a>
 
-            <a href="bienes/consultar">
+            <a href="bienes/inicio">
                 <div class="col-sm-4"> <div class="panel panel-primary">
                         <div class="panel-heading">Bienes & Inmuebles</div>
                         <div class="panel-body">Para cambiar imagenes, estados y valores hacer click sobre este panel</div>
