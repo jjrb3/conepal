@@ -10,11 +10,11 @@
 
             <div class="col-md-12">
 
-                <form class="form-horizontal">
+                <div class="form-horizontal">
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Nombre:</label>
                         <div class="col-sm-3">
-                            <input type="email" class="form-control" id="usuario" placeholder="Ingresar Nombre">
+                            <input type="text" class="form-control" id="usuario" placeholder="Ingresar Nombre">
                         </div>
                         <label class="control-label col-sm-2" for="pwd">Contacto:</label>
                         <div class="col-sm-3">
@@ -49,13 +49,16 @@
                                 <textarea style="width: 60%;"  name="comentarios" rows="5">Este inmueble cuenta con un terreno aproximado de 5885 metros cuadrados</textarea><br>
 
                             </div>
-                            <button type="submit" class="btn btn-default">Regresar</button> <button type="submit" class="btn btn-danger">Actualizar</button>
+                            <a href="{{asset('administrador/bienesInmuebles/inicio')}}">
+                                <button type="submit" class="btn btn-default">Regresar</button>
+                            </a>
+                            <button type="submit" class="btn btn-danger">Actualizar</button>
 
                         </div>
 
                     </center>
 
-                </form>
+                </div>
 
 
             </div>

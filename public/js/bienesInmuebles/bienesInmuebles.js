@@ -142,13 +142,19 @@ function formularioActualizar(id) {
     });
 }
 
-function buscarUsuario() {
+function buscarBienesInmuebles(pagina) {
 
     $(document).ready(function(){
 
         $("#tabla").html('<center><img src="'+$("#ruta").val()+'tema/images/cargando.gif" width="50px"></center>');
 
-        $.post('inicio/buscar',{},function(data){
+        if (!pagina) {
+            pagina = 1;
+        }
+
+        $.post('inicio/buscar',{buscar:$("#buscar").val(),
+                                pagina:pagina,
+                                tamanhioPagina:10},function(data){
 
             switch(data.resultado) {
                 case 1:
@@ -158,25 +164,21 @@ function buscarUsuario() {
                     $('#tabla').html(tabla);   // Quitamos el cargando
 
                     // Titulo de la tabla
-                    tabla += '<div class="table-responsive"><table class="table"><thead><tr><th>Usuario</th><th>Nombres</th><th>Apellidos</th><th>Email</th><th>Estado</th><th>Opciones</th></tr></thead></div>';
+                    tabla += '<div class="table-responsive"><table class="table"><thead><tr><th>Nombre</th><th>Valor</th><th>Descripción</th><th>Direccion</th><th>Contacto</th><th>Imagenes</th><th>Estado</th><th>Opciones</th></tr></thead></div>';
 
                     // Datos de la tabla
-                    jQuery.each(data.json, function(i, val) {
+                    jQuery.each(data.json.data, function(i, val) {
+
                         tabla += '<tbody><tr>';
-                        tabla += '<td>'+val.usuario+'</td>';
-                        tabla += '<td>'+val.nombres+'</td>';
-                        tabla += '<td>'+val.apellidos+'</td>';
-                        tabla += '<td>'+val.correo+'</td>';
-                        if(val.estado == 1) {
-                            tabla = tabla + '<td>Activo</td>';
-                            boton =  '<a href="#" onclick="deshabilitar('+val.id+')"><span class="glyphicon glyphicon glyphicon-remove"></span></a></td>';
-                        }
-                        else {
-                            tabla = tabla + '<td>Inactivo</td>';
-                            boton =  '<a href="#" onclick="habilitar('+val.id+')"><span class="glyphicon glyphicon glyphicon-check"></span></a></td>';
-                        }
+                        tabla += '<td>'+val.nombre+'</td>';
+                        tabla += '<td>$'+val.valor.toLocaleString()+'</td>';
+                        tabla += '<td><a href="actualizar">Ver descripción</a></td>';
+                        tabla += '<td>'+val.direccion+'</td>';
+                        tabla += '<td>'+val.contacto+'</td>';
+                        tabla += '<td><a href="imagenes">Ver Imagenes</a></td>';
+                        tabla += '<td>'+val.estado_inmueble+'</td>';
                         tabla += '<td><a href="#" onclick="formularioActualizar('+val.id+')"><span class="glyphicon glyphicon glyphicon-pencil"></span></a>  / ';
-                        tabla += boton;
+                        tabla += '<a href="#" onclick="deshabilitar('+val.id+')"><span class="glyphicon glyphicon glyphicon-remove"></span></a></td>';
                         tabla += '</tr></tbody>';
                     });
 
@@ -184,7 +186,7 @@ function buscarUsuario() {
 
 
                     $('#tabla').append(tabla);
-
+                    mostrarPaginacion('paginacion','buscarBienesInmuebles',data.json.last_page,data.json.current_page);
                     break;
                 case 0:
                     mensajeAdvertencia("tabla", data.mensaje);

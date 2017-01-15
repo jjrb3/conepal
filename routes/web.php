@@ -32,3 +32,10 @@ Route::post('/administrador/usuario/inicio/deshabilitar','UsuarioController@Desh
 
 // Sesion de información
 Route::post('/administrador/informacion/inicio/actualizar','InformacionPaginaController@ActualizarInformacionPagina');
+
+// Sesion de bienes e inmuebles
+Route::post('/administrador/bienesInmuebles/inicio/buscar','InmuebleController@ConsultarInmueble');
+Route::post('/administrador/bienesInmuebles/inicio/buscar/id','InmuebleController@ConsultarUsuarioId');
+Route::post('/administrador/bienesInmuebles/inicio/registrar','InmuebleController@GuardarUsuario');
+Route::post('/administrador/bienesInmuebles/inicio/actualizar','InmuebleController@ActualizarUsuario');
+Route::post('/administrador/bienesInmuebles/inicio/deshabilitar','InmuebleController@DeshabilitarUsuario');

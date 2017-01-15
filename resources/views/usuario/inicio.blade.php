@@ -87,7 +87,9 @@
                     </div>
                 </div>
             </div>
-
+            <center>
+                <a href="{{asset('administrador/inicio')}}"><button type="submit" class="btn btn-danger">Regresar</button></a>
+            </center>
         </div>
     </div>
 </div>

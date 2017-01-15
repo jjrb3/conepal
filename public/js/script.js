@@ -11,6 +11,37 @@ function validarCorreo(email) {
   	}
 }
 
+function mostrarPaginacion(div,metodoJS,cantidad,paginaActual) {
+
+    var paginacion = '';
+    var anterior = '';
+    var siguiente = '';
+    var activo = '';
+
+    if (paginaActual - 1 > 0) {
+
+        paginacion = '<li><a style="cursor:pointer;" onclick="'+metodoJS+'('+(paginaActual - 1)+')">«</a></li>';
+	}
+
+    for (var i=1;i<=cantidad;i++) {
+
+    	if (i == paginaActual) {
+    		activo = ' class="active" '
+		}
+		else {
+    		activo = '';
+		}
+		paginacion += '<li '+activo+'><a style="cursor:pointer;" onclick="'+metodoJS+'('+i+')">'+i+'</a></li>';
+	}
+
+    if (paginaActual + 1 <= cantidad) {
+
+        paginacion += '<li><a style="cursor:pointer;" onclick="'+metodoJS+'(' + (paginaActual + 1) + ')">»</a></li>';
+    }
+
+	$("#"+div).html(paginacion);
+}
+
 function cargar(div) {
 
 	$("#"+div).html('<center><img src="../img/cargando.gif" width="50px"><br><br></center>');
