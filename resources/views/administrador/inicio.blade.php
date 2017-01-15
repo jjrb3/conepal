@@ -11,7 +11,7 @@
     <div class="row">
 
         <div class="col-md-12">
-            <a href="usuario/consultar">
+            <a href="usuario/inicio">
                 <div class="col-sm-4"> <div class="panel panel-primary">
                         <div class="panel-heading">Usuarios</div>
                         <div class="panel-body">Para agregar usuarios hacer click sobre este panel</div>

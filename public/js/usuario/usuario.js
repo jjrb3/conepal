@@ -26,13 +26,10 @@ $(document).ready(function(){
                     document.getElementById("fomrUsuario").reset();
                     break;
                 case 0:
-                    mensajeAdvertencia("mensaje",data.mensaje);
+                    mensajeAdvertencia("mensaje", data.mensaje);
                     break;
                 case -1:
-                    mensajeAdvertencia("mensaje",data.mensaje);
-                    break;
-                case -2:
-                    mensajeError("mensaje",data.mensaje);
+                    mensajeError("mensaje", data.mensaje);
                     break;
             }
         },'json');
@@ -68,9 +65,6 @@ function confirmarDeshabilitar(id,estado) {
                     mensajeAdvertencia("mensaje", data.mensaje);
                     break;
                 case -1:
-                    mensajeAdvertencia("mensaje", data.mensaje);
-                    break;
-                case -2:
                     mensajeError("mensaje", data.mensaje);
                     break;
             }
@@ -102,9 +96,6 @@ function actualizar() {
                     mensajeAdvertencia("mensaje", data.mensaje);
                     break;
                 case -1:
-                    mensajeAdvertencia("mensaje", data.mensaje);
-                    break;
-                case -2:
                     mensajeError("mensaje", data.mensaje);
                     break;
             }
@@ -139,13 +130,10 @@ function formularioActualizar(id) {
                         $("#emailActualizar").val(data.json[0].correo);
                         break;
                     case 0:
-                        mensajeAdvertencia("tabla", data.mensaje);
+                        mensajeAdvertencia("mensaje", data.mensaje);
                         break;
                     case -1:
-                        mensajeAdvertencia("tabla", data.mensaje);
-                        break;
-                    case -2:
-                        mensajeError("tabla", data.mensaje);
+                        mensajeError("mensaje", data.mensaje);
                         break;
                 }
             },'json');
@@ -199,13 +187,10 @@ function buscarUsuario() {
 
                     break;
                 case 0:
-                    mensajeAdvertencia("tabla",data.mensaje);
+                    mensajeAdvertencia("mensaje", data.mensaje);
                     break;
                 case -1:
-                    mensajeAdvertencia("tabla",data.mensaje);
-                    break;
-                case -2:
-                    mensajeError("tabla",data.mensaje);
+                    mensajeError("mensaje", data.mensaje);
                     break;
             }
         },'json');

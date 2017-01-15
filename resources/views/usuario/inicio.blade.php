@@ -12,7 +12,6 @@
 
             <form class="form-horizontal" id="fomrUsuario" action="#">
                 <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" id="ruta" value="{{asset('')}}">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="email">Usuarios:</label>
                     <div class="col-sm-3">

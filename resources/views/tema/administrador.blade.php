@@ -16,18 +16,19 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a style="color: white;" class="navbar-brand" href="#">INMOBILIARIA CONIPAL</a>
+            <a style="color: white;" class="navbar-brand" href="{{asset('administrador/inicio')}}">INMOBILIARIA CONIPAL</a>
         </div>
 
         <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span>Hola</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Cerrar sessión</a></li>
+            <li><a href="{{asset('administrador/cerrarSession')}}"><span class="glyphicon glyphicon-log-in"></span> Cerrar sessión</a></li>
         </ul>
     </div>
 </nav>
 
 @yield('content')
 
+<input type="hidden" id="ruta" value="{{asset('')}}">
 </div>
 </body>
 </html>

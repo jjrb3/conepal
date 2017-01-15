@@ -24,6 +24,8 @@
 	<script type="text/javascript" src="{{asset('tema/assets/slitslider/js/jquery.ba-cond.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('tema/assets/slitslider/js/jquery.slitslider.js')}}"></script>
 	<!-- slitslider -->
+
+	<script type="text/javascript" src="{{asset('js/script.js')}}"></script>
 </head>
 <body>
 	<!-- Header Starts -->
@@ -106,5 +108,6 @@
 			</center>
 		</div>
 	</div>
+	<input type="hidden" id="ruta" value="{{asset('')}}">
 </body>
 </html>

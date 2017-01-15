@@ -30,7 +30,7 @@ class UsuarioController extends Controller
             }
         } catch (Exception $e) {
             return response()->json(array(
-                'resultado' => -2,
+                'resultado' => -1,
                 'mensaje' => 'Grave error: ' . $e,
             ));
         }
@@ -41,34 +41,34 @@ class UsuarioController extends Controller
     {
         if (!$request->get('usuario')) {
             return response()->json(array(
-                'resultado' => -1,
+                'resultado' => 0,
                 'mensaje' => 'Debe ingresar el campo usuario para continuar',
             ));
         }
 
         if (!$request->get('nombres')) {
             return response()->json(array(
-                'resultado' => -1,
+                'resultado' => 0,
                 'mensaje' => 'Debe ingresar el campo nombres para continuar',
             ));
         }
 
         if (!$request->get('apellidos')) {
             return response()->json(array(
-                'resultado' => -1,
+                'resultado' => 0,
                 'mensaje' => 'Debe ingresar el campo apellidos para continuar',
             ));
         }
 
         if (!$request->get('email')) {
             return response()->json(array(
-                'resultado' => -1,
+                'resultado' => 0,
                 'mensaje' => 'Debe ingresar el campo email para continuar',
             ));
         }
         elseif (!filter_var($request->get('email'), FILTER_VALIDATE_EMAIL)) {
             return response()->json(array(
-                'resultado' => -1,
+                'resultado' => 0,
                 'mensaje' => 'El correo digitado no es correcto',
             ));
         }
@@ -94,7 +94,7 @@ class UsuarioController extends Controller
             }
         } catch (Exception $e) {
             return response()->json(array(
-                'resultado' => -2,
+                'resultado' => -1,
                 'mensaje' => 'Grave error: ' . $e,
             ));
         }
@@ -106,41 +106,41 @@ class UsuarioController extends Controller
 
         if (!$request->get('usuario')) {
             return response()->json(array(
-                'resultado' => -1,
+                'resultado' => 0,
                 'mensaje' => 'Debe ingresar el campo usuario para continuar',
             ));
         }
 
         if (!$request->get('clave')) {
             return response()->json(array(
-                'resultado' => -1,
+                'resultado' => 0,
                 'mensaje' => 'Debe ingresar el campo contraseña para continuar',
             ));
         }
 
         if (!$request->get('nombres')) {
             return response()->json(array(
-                'resultado' => -1,
+                'resultado' => 0,
                 'mensaje' => 'Debe ingresar el campo nombres para continuar',
             ));
         }
 
         if (!$request->get('apellidos')) {
             return response()->json(array(
-                'resultado' => -1,
+                'resultado' => 0,
                 'mensaje' => 'Debe ingresar el campo apellidos para continuar',
             ));
         }
 
         if (!$request->get('email')) {
             return response()->json(array(
-                'resultado' => -1,
+                'resultado' => 0,
                 'mensaje' => 'Debe ingresar el campo email para continuar',
             ));
         }
         elseif (!filter_var($request->get('email'), FILTER_VALIDATE_EMAIL)) {
             return response()->json(array(
-                'resultado' => -1,
+                'resultado' => 0,
                 'mensaje' => 'El correo digitado no es correcto',
             ));
         }
@@ -166,7 +166,7 @@ class UsuarioController extends Controller
             }
         } catch (Exception $e) {
             return response()->json(array(
-                'resultado' => -2,
+                'resultado' => -1,
                 'mensaje' => 'Grave error: ' . $e,
             ));
         }
@@ -175,13 +175,13 @@ class UsuarioController extends Controller
     public function ConsultarUsuarioId(Request $request)
     {
         try {
-            $Usuario = Usuario::where('id','=',$request->get('id'))->get();
+            $usuario = Usuario::where('id','=',$request->get('id'))->get();
 
-            if ($Usuario) {
+            if ($usuario) {
                 return response()->json(array(
                     'resultado' => 1,
                     'mensaje' => 'Se econtraron datos',
-                    'json' => $Usuario
+                    'json' => $usuario
                 ));
             } else {
                 return response()->json(array(
@@ -191,7 +191,7 @@ class UsuarioController extends Controller
             }
         } catch (Exception $e) {
             return response()->json(array(
-                'resultado' => -2,
+                'resultado' => -1,
                 'mensaje' => 'Grave error: ' . $e,
             ));
         }
@@ -199,6 +199,7 @@ class UsuarioController extends Controller
 
     public function ConsultarUsuario()
     {
+
         try {
             $Usuario = Usuario::whereNotIn('id', [1,2])
                                 ->orderBy('estado', 'DESC')
@@ -224,34 +225,5 @@ class UsuarioController extends Controller
                 'mensaje'   => 'Grave error: ' . $e,
             ));
         }
-    	/*$datos = $request->all();
-
-    	if ($usuario) {
-
-			$usuarioVO = $usuario[0];	
-
-			if ($usuarioVO->get_clave() == md5($_REQUEST["clave"])) {
-
-				$request->session()->put('id_usuario', 'me@example.com');
-				
-				return 1;
-			}
-			else{
-
-				return -1;
-			}
-		}
-		else {
-
-			return 0;
-		}
-
-    	// agregar a session
-		$request->session()->put('email', 'me@example.com');
-
-		// Olvidar session
-		$request->session()->forget('email');
-
-    	return $request->session()->get('email');*/
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 use App\InformacionPagina;
 use App\Imagen;
@@ -11,6 +12,7 @@ use App\Usuario;
 use App\Rol;
 use App\Persona;
 
+
 use App\Http\Controllers\ParametrizacionVisual;
 
 class NavegacionController extends Controller
@@ -18,9 +20,9 @@ class NavegacionController extends Controller
     var $seleccion	= ' class="active" ';
     var $menu 		= "";
 
-    public function Administrador($carpeta,$pagina) {
+    public function Administrador(Request $request,$carpeta,$pagina) {
 
-        return View("$carpeta.$pagina");
+        return !$request->session()->get('nombres') ? redirect('/inicio') : View("$carpeta.$pagina");
     }
 
     public function Usuario($pagina) {

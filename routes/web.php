@@ -13,7 +13,8 @@
 
 Route::get('/{pagina}','NavegacionController@Usuario');
 Route::get('/administrador/{carpeta}/{pagina}','NavegacionController@Administrador');
-Route::get('/verificar/login','UsuarioController@VerificarUsuario');
+Route::post('/ingresar/verificar','SesionController@VerificarUsuario');
+Route::get('/administrador/cerrarSession','SesionController@CerrarSesion');
 
 // Administracion
 Route::get('/administrador/inicio',function(){
