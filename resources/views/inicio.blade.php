@@ -15,7 +15,7 @@
 						<h2><a href="#">2 Alcobas y cinco cuartos de 270m*2 en venta</a></h2>
 						<blockquote>
 							<p class="location"><span class="glyphicon glyphicon-map-marker"></span> 2017 Miramar, Barranquilla/Colombia</p>
-							<p>Hermoso!!! apartamento con un enchapado lujoso, con hermosa vista y excelente sector de barranquilla.</p>
+							<p>Hermoso apartamento con un enchapado lujoso, con hermosa vista y excelente sector de barranquilla.</p>
 							<cite>$ 850,000,000</cite>
 						</blockquote>
 					</div>
