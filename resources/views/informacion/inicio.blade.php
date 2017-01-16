@@ -73,7 +73,7 @@
                 </div>
                 <div id="mensaje"></div>
 
-                <center>  <a href="{{asset('administrador/inicio')}}"><button type="submit" class="btn btn-danger">Regresar</button></a> <button type="submit" class="btn btn-danger" onclick="actualizar()">Actualizar Informacion</button></center>
+                <center>  <a href="{{asset('administrador/inicio')}}"><button class="btn btn-danger">Regresar</button></a> <button type="submit" class="btn btn-danger" onclick="actualizar()">Actualizar Informacion</button></center>
 
             </div>
         </div>

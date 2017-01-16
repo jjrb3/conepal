@@ -21,7 +21,8 @@ class NavegacionController extends Controller
 
         return !$request->session()->get('nombres') ? redirect('/inicio') : View("$carpeta.$pagina",
                                                                                  ['nombres' => $request->session()->get('nombres'),
-                                                                                  'informacionPagina' => InformacionPaginaController::ConsultarInformacionPagina()]);
+                                                                                  'informacionPagina' => InformacionPaginaController::ConsultarInformacionPagina(),
+                                                                                  'estadoInmueble' => EstadoInmuebleController::Consultar()]);
     }
 
     public function Usuario($pagina) {

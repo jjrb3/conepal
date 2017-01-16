@@ -10,52 +10,63 @@
 
             <div class="col-md-12">
 
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Nombre:</label>
-                        <div class="col-sm-3">
-                            <input type="email" class="form-control" id="usuario" placeholder="Ingresar Nombre">
+                <div class="form-horizontal">
+                    <form id="fomulario">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Nombre:</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresar Nombre">
+                            </div>
+                            <label class="control-label col-sm-2" for="pwd">Contacto:</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="contacto" name="contacto" placeholder="Ingresar contacto">
+                            </div>
                         </div>
-                        <label class="control-label col-sm-2" for="pwd">Contacto:</label>
-                        <div class="col-sm-3">
-                            <input type="password" class="form-control" id="pwd" placeholder="Ingresar contacto">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Valor:</label>
+                            <div class="col-sm-3">
+                                <input type="number" class="form-control" id="valor" name="valor">
+                            </div>
+                            <label class="control-label col-sm-2" for="email">Direccion:</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingresar direccion">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Valor:</label>
-                        <div class="col-sm-3">
-                            <input type="number" class="form-control" id="email">
-                        </div>
-                        <label class="control-label col-sm-2" for="email">Direccion:</label>
-                        <div class="col-sm-3">
-                            <input type="email" class="form-control" id="email" placeholder="Ingresar direccion">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Estado:</label>
-                        <div class="col-sm-3">
-                            <select id="selectbasic" name="selectbasic" class="form-control">
-                                <option value="1">Estado de inmueble</option>
-                                <option value="2">Activo</option>
-                                <option value="">Inactivo</option>
-                            </select>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="estado">Estado:</label>
+                            <div class="col-sm-3">
+                                <select id="estado" name="estado" class="form-control">
+                                    <option value="">Estado de inmueble</option>
+                                    @foreach ($estadoInmueble as $estado)
+                                        <option value="{{$estado['id']}}">{{$estado['nombre']}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
                         </div>
 
-                    </div>
 
-                    <center>
-                        <div class="col-md-12">
-                            <textarea  name="comentarios" rows="5" cols="81">Escribir la descripcion</textarea><br>
-                            <button type="submit" class="btn btn-default">Regresar</button> <button type="submit" class="btn btn-danger">Crear Usuario</button>
-                        </div>
+                    <center><textarea name="descripcion" rows="5" cols="81" id="descripcion" placeholder="Escribir la descripcion"></textarea>
                     </center>
-
-                </form>
-
-
+                    </form>
+                    <center>
+                            <br>
+                            <a href="{{asset('administrador/bienesInmuebles/inicio')}}">
+                                <button class="btn btn-default">Regresar</button>
+                            </a>
+                            <button class="btn btn-danger" onclick="crearActualizar('registrar')">Crear</button>
+                        <br>
+                    </center>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <br>
+                <div id="mensaje"></div>
             </div>
 
         </div>
         <br>
     </div>
+    <script type="text/javascript" src="{{asset('js/bienesInmuebles/bienesInmuebles.js')}}"></script>
+    <script>buscar()</script>
 @endsection

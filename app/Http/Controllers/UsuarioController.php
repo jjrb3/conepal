@@ -89,7 +89,7 @@ class UsuarioController extends Controller
             } else {
                 return response()->json(array(
                     'resultado' => 0,
-                    'mensaje' => 'Se encontraron problemas al crear el usuario',
+                    'mensaje' => 'Se encontraron problemas al actualizar el usuario',
                 ));
             }
         } catch (Exception $e) {

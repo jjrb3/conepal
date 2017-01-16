@@ -6,59 +6,22 @@ $.ajaxSetup({
     }
 });
 
-$(document).ready(function(){
-
-    $('#fomrUsuario').submit(function(){
-
-        $("#mensaje").html('<center><img src="'+$("#ruta").val()+'tema/images/cargando.gif" width="50px"></center>');
-
-
-        $.post('inicio/registrar',{   usuario:$("#usuario").val(),
-                                            clave:$("#clave").val(),
-                                            nombres:$("#nombres").val(),
-                                            apellidos:$("#apellidos").val(),
-                                            email:$("#email").val()},function(data){
-
-            switch(data.resultado) {
-                case 1:
-                    mensajeRealizado("mensaje",data.mensaje);
-                    buscarUsuario();
-                    document.getElementById("fomrUsuario").reset();
-                    break;
-                case 0:
-                    mensajeAdvertencia("mensaje", data.mensaje);
-                    break;
-                case -1:
-                    mensajeError("mensaje", data.mensaje);
-                    break;
-            }
-        },'json');
-    });
-});
-
 function deshabilitar(id) {
 
-    var botonSi = '<span onclick="confirmarDeshabilitar('+id+',\'0\')" style="cursor:pointer"><strong>AQUÍ</strong></span>';
+    var botonSi = '<span onclick="confirmarDeshabilitar('+id+')" style="cursor:pointer"><strong>AQUÍ</strong></span>';
 
-    mensajeInformacion('mensaje','Si esta seguro que desea deshabilitar este usuario presione '+botonSi);
+    mensajeInformacion('mensaje','Si esta seguro que desea eliminar esta propiedad presione '+botonSi);
 }
 
-function habilitar(id) {
-
-    var botonSi = '<span onclick="confirmarDeshabilitar('+id+',\'1\')" style="cursor:pointer"><strong>AQUÍ</strong></span>';
-
-    mensajeInformacion('mensaje','Si esta seguro que desea habiliar este usuario presione '+botonSi);
-}
-
-function confirmarDeshabilitar(id,estado) {
+function confirmarDeshabilitar(id) {
 
     $(document).ready(function () {
-        $.post('inicio/deshabilitar',{id:id,estado:estado}, function (data) {
+        $.post('inicio/deshabilitar',{id:id}, function (data) {
 
             switch (data.resultado) {
                 case 1:
                     mensajeRealizado("mensaje", data.mensaje);
-                    buscarUsuario();
+                    buscar();
                     volver();
                     break;
                 case 0:
@@ -72,25 +35,18 @@ function confirmarDeshabilitar(id,estado) {
     });
 }
 
-function actualizar() {
+function crearActualizar(accion) {
 
     $(document).ready(function () {
 
         $("#mensaje").html('<center><img src="' + $("#ruta").val() + 'tema/images/cargando.gif" width="50px"></center>');
 
-        $.post('inicio/actualizar',{id: $("#usuarioId").val(),
-                                    usuario: $("#usuarioActualizar").val(),
-                                    clave: $("#claveActualizar").val(),
-                                    nombres: $("#nombresActualizar").val(),
-                                    apellidos: $("#apellidosActualizar").val(),
-                                    email: $("#emailActualizar").val()
-                                    }, function (data) {
+        $.post('inicio/'+accion,$("#fomulario").serialize(), function (data) {
 
             switch (data.resultado) {
                 case 1:
                     mensajeRealizado("mensaje", data.mensaje);
-                    buscarUsuario();
-                    volver();
+                    document.getElementById("fomulario").reset();
                     break;
                 case 0:
                     mensajeAdvertencia("mensaje", data.mensaje);
@@ -103,46 +59,32 @@ function actualizar() {
     });
 }
 
-function volver() {
-
-    $("#fomrUsuarioActualizar").slideUp(500,function(){
-        $("#usuarioActualizar").val('');
-        $("#claveActualizar").val('');
-        $("#nombresActualizar").val('');
-        $("#apellidosActualizar").val('');
-        $("#emailActualizar").val('');
-        $("#fomrUsuario").slideDown(500);
-    });
-}
-
-function formularioActualizar(id) {
-
+function llenarDatos() {
     $(document).ready(function(){
-        $("#fomrUsuario").slideUp(500,function(){
-            $.post('inicio/buscar/id',{id:id},function(data){
-                switch(data.resultado) {
-                    case 1:
-                        $("#usuarioId").val(data.json[0].id);
-                        $("#usuarioActualizar").val(data.json[0].usuario);
-                        $("#claveActualizar").val('');
-                        $("#nombresActualizar").val(data.json[0].nombres);
-                        $("#apellidosActualizar").val(data.json[0].apellidos);
-                        $("#emailActualizar").val(data.json[0].correo);
-                        break;
-                    case 0:
-                        mensajeAdvertencia("mensaje", data.mensaje);
-                        break;
-                    case -1:
-                        mensajeError("mensaje", data.mensaje);
-                        break;
-                }
-            },'json');
-            $("#fomrUsuarioActualizar").slideDown(500);
-        });
+        $.post('inicio/buscar/id',{id:$("#id").val()},function(data){
+
+            switch(data.resultado) {
+                case 1:
+                    $("#nombre").val(data.json[0].nombre);
+                    $("#contacto").val(data.json[0].contacto);
+                    $("#valor").val(data.json[0].valor);
+                    $("#direccion").val(data.json[0].direccion);
+                    $("#estado").val(data.json[0].id_estado_inmueble);
+                    $("#descripcion").val(data.json[0].descripcion);
+                    break;
+                case 0:
+                    mensajeAdvertencia("tabla", data.mensaje);
+                    break;
+                case -1:
+                    mensajeError("tabla", data.mensaje);
+                    break;
+            }
+        },'json');
     });
 }
 
-function buscarBienesInmuebles(pagina) {
+
+function buscar(pagina) {
 
     $(document).ready(function(){
 
@@ -172,12 +114,12 @@ function buscarBienesInmuebles(pagina) {
                         tabla += '<tbody><tr>';
                         tabla += '<td>'+val.nombre+'</td>';
                         tabla += '<td>$'+val.valor.toLocaleString()+'</td>';
-                        tabla += '<td><a href="actualizar">Ver descripción</a></td>';
+                        tabla += '<td><a href="actualizar?id='+val.id+'">Ver descripción</a></td>';
                         tabla += '<td>'+val.direccion+'</td>';
                         tabla += '<td>'+val.contacto+'</td>';
-                        tabla += '<td><a href="imagenes">Ver Imagenes</a></td>';
+                        tabla += '<td><a href="imagenes?id='+val.id+'">Ver Imagenes</a></td>';
                         tabla += '<td>'+val.estado_inmueble+'</td>';
-                        tabla += '<td><a href="#" onclick="formularioActualizar('+val.id+')"><span class="glyphicon glyphicon glyphicon-pencil"></span></a>  / ';
+                        tabla += '<td><a href="actualizar?id='+val.id+'"><span class="glyphicon glyphicon glyphicon-pencil"></span></a>  / ';
                         tabla += '<a href="#" onclick="deshabilitar('+val.id+')"><span class="glyphicon glyphicon glyphicon-remove"></span></a></td>';
                         tabla += '</tr></tbody>';
                     });
@@ -186,7 +128,7 @@ function buscarBienesInmuebles(pagina) {
 
 
                     $('#tabla').append(tabla);
-                    mostrarPaginacion('paginacion','buscarBienesInmuebles',data.json.last_page,data.json.current_page);
+                    mostrarPaginacion('paginacion','buscar',data.json.last_page,data.json.current_page);
                     break;
                 case 0:
                     mensajeAdvertencia("tabla", data.mensaje);

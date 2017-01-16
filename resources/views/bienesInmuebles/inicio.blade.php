@@ -17,11 +17,13 @@
                             <input type="text" class="form-control" id="buscar" placeholder="Digitar nombre">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-danger" onclick="buscarBienesInmuebles()">Buscar</button>
-                    <a href="../bienes/crear.blade.php"><button class="btn btn-danger">Crear</button></a>
+                    <button type="submit" class="btn btn-danger" onclick="buscar()">Buscar</button>
+                    <a href="crear"><button class="btn btn-danger">Crear</button></a>
                 </div>
                 <br>
-                <br> <div class="panel panel-primary">
+                <div id="mensaje"></div>
+                <br>
+                <div class="panel panel-primary">
                     <div class="panel-heading">Listado de Bienes & Inmuebles</div>
                     <div id="tabla">
                     </div>
@@ -38,5 +40,5 @@
     </div>
 
     <script type="text/javascript" src="{{asset('js/bienesInmuebles/bienesInmuebles.js')}}"></script>
-    <script>buscarBienesInmuebles()</script>
+    <script>buscar()</script>
 @endsection

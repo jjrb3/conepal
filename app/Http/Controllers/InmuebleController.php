@@ -10,25 +10,22 @@ use Illuminate\Pagination\Paginator;
 
 class inmuebleController extends Controller
 {
-    public function DeshabilitarUsuario(Request $request)
+    public function Deshabilitar(Request $request)
     {
-        $mensaje1 = '';
-        $mensaje2 = '';
-        $usuario = Usuario::Find($request->get('id'));
-        $usuario->estado = (int)$request->get('estado');
+        $inmueble = Inmueble::Find($request->get('id'));
+        $inmueble->estado = (int)0;
 
         try {
-            if ($usuario->save()) {
-                $request->get('estado') == 1 ? $mensaje1 = 'habilió' :  $mensaje1 = 'deshabilitó';
-                $request->get('estado') == 1 ? $mensaje2 = 'habilitar' :  $mensaje2 = 'deshabilitar';
+            if ($inmueble->save()) {
+
                 return response()->json(array(
                     'resultado' => 1,
-                    'mensaje' => 'Se ' . $mensaje1 . ' a la persona el usuario correctamente',
+                    'mensaje' => 'Se eliminó la propiedad correctamente',
                 ));
             } else {
                 return response()->json(array(
                     'resultado' => 0,
-                    'mensaje' => 'Se encontraron problemas al ' . $mensaje2 . ' el usuario',
+                    'mensaje' => 'Se encontraron problemas al eliminar la propiedad',
                 ));
             }
         } catch (Exception $e) {
@@ -40,59 +37,68 @@ class inmuebleController extends Controller
 
     }
 
-    public function ActualizarUsuario(Request $request)
+    public function Actualizar(Request $request)
     {
-        if (!$request->get('usuario')) {
+        if (!$request->get('nombre')) {
             return response()->json(array(
                 'resultado' => 0,
-                'mensaje' => 'Debe ingresar el campo usuario para continuar',
+                'mensaje' => 'Debe ingresar el campo nombre para continuar',
             ));
         }
 
-        if (!$request->get('nombres')) {
+        if (!$request->get('contacto')) {
             return response()->json(array(
                 'resultado' => 0,
-                'mensaje' => 'Debe ingresar el campo nombres para continuar',
+                'mensaje' => 'Debe ingresar el campo contacto para continuar',
             ));
         }
 
-        if (!$request->get('apellidos')) {
+        if (!$request->get('valor')) {
             return response()->json(array(
                 'resultado' => 0,
-                'mensaje' => 'Debe ingresar el campo apellidos para continuar',
+                'mensaje' => 'Debe ingresar el campo valor para continuar',
             ));
         }
 
-        if (!$request->get('email')) {
+        if (!$request->get('direccion')) {
             return response()->json(array(
                 'resultado' => 0,
-                'mensaje' => 'Debe ingresar el campo email para continuar',
-            ));
-        }
-        elseif (!filter_var($request->get('email'), FILTER_VALIDATE_EMAIL)) {
-            return response()->json(array(
-                'resultado' => 0,
-                'mensaje' => 'El correo digitado no es correcto',
+                'mensaje' => 'Debe ingresar el campo direccion para continuar',
             ));
         }
 
-        $usuario = Usuario::Find($request->get('id'));
-        $usuario->usuario = trim($request->get('usuario'));
-        $request->get('clave') ? $usuario->clave = md5($request->get('clave')) : '';
-        $usuario->nombres = $request->get('nombres');
-        $usuario->apellidos = $request->get('apellidos');
-        $usuario->correo = $request->get('email');
+        if (!$request->get('estado')) {
+            return response()->json(array(
+                'resultado' => 0,
+                'mensaje' => 'Debe ingresar el campo estado para continuar',
+            ));
+        }
+
+        if (!$request->get('descripcion')) {
+            return response()->json(array(
+                'resultado' => 0,
+                'mensaje' => 'Debe ingresar el campo descripcion para continuar',
+            ));
+        }
+
+        $inmueble = Inmueble::Find($request->get('id'));
+        $inmueble->id_estado_inmueble = $request->get('estado');
+        $inmueble->nombre = trim($request->get('nombre'));
+        $inmueble->contacto = $request->get('contacto');
+        $inmueble->valor = $request->get('valor');
+        $inmueble->direccion = $request->get('direccion');
+        $inmueble->descripcion = $request->get('descripcion');
 
         try {
-            if ($usuario->save()) {
+            if ($inmueble->save()) {
                 return response()->json(array(
                     'resultado' => 1,
-                    'mensaje' => 'Se actualizó el usuario correctamente',
+                    'mensaje' => 'Se actualizó la propiedad correctamente',
                 ));
             } else {
                 return response()->json(array(
                     'resultado' => 0,
-                    'mensaje' => 'Se encontraron problemas al crear el usuario',
+                    'mensaje' => 'Se encontraron problemas al actualiar la propiedad',
                 ));
             }
         } catch (Exception $e) {
@@ -104,59 +110,60 @@ class inmuebleController extends Controller
 
     }
 
-    public function GuardarUsuario(Request $request)
+    public function Guardar(Request $request)
     {
-
-        if (!$request->get('usuario')) {
+        if (!$request->get('nombre')) {
             return response()->json(array(
                 'resultado' => 0,
-                'mensaje' => 'Debe ingresar el campo usuario para continuar',
+                'mensaje' => 'Debe ingresar el campo nombre para continuar',
             ));
         }
 
-        if (!$request->get('clave')) {
+        if (!$request->get('contacto')) {
             return response()->json(array(
                 'resultado' => 0,
-                'mensaje' => 'Debe ingresar el campo contraseña para continuar',
+                'mensaje' => 'Debe ingresar el campo contacto para continuar',
             ));
         }
 
-        if (!$request->get('nombres')) {
+        if (!$request->get('valor')) {
             return response()->json(array(
                 'resultado' => 0,
-                'mensaje' => 'Debe ingresar el campo nombres para continuar',
+                'mensaje' => 'Debe ingresar el campo valor para continuar',
             ));
         }
 
-        if (!$request->get('apellidos')) {
+        if (!$request->get('direccion')) {
             return response()->json(array(
                 'resultado' => 0,
-                'mensaje' => 'Debe ingresar el campo apellidos para continuar',
+                'mensaje' => 'Debe ingresar el campo direccion para continuar',
             ));
         }
 
-        if (!$request->get('email')) {
+        if (!$request->get('estado')) {
             return response()->json(array(
                 'resultado' => 0,
-                'mensaje' => 'Debe ingresar el campo email para continuar',
-            ));
-        }
-        elseif (!filter_var($request->get('email'), FILTER_VALIDATE_EMAIL)) {
-            return response()->json(array(
-                'resultado' => 0,
-                'mensaje' => 'El correo digitado no es correcto',
+                'mensaje' => 'Debe ingresar el campo estado para continuar',
             ));
         }
 
-        $usuario = new Usuario;
-        $usuario->usuario = trim($request->get('usuario'));
-        $usuario->clave = md5($request->get('clave'));
-        $usuario->nombres = $request->get('nombres');
-        $usuario->apellidos = $request->get('apellidos');
-        $usuario->correo = $request->get('email');
+        if (!$request->get('descripcion')) {
+            return response()->json(array(
+                'resultado' => 0,
+                'mensaje' => 'Debe ingresar el campo descripcion para continuar',
+            ));
+        }
+
+        $inmueble = new Inmueble;
+        $inmueble->id_estado_inmueble = $request->get('estado');
+        $inmueble->nombre = trim($request->get('nombre'));
+        $inmueble->contacto = $request->get('contacto');
+        $inmueble->valor = $request->get('valor');
+        $inmueble->direccion = $request->get('direccion');
+        $inmueble->descripcion = $request->get('descripcion');
 
         try {
-            if ($usuario->save()) {
+            if ($inmueble->save()) {
                 return response()->json(array(
                     'resultado' => 1,
                     'mensaje' => 'Se creó el usuario correctamente',
@@ -175,10 +182,10 @@ class inmuebleController extends Controller
         }
     }
 
-    public function ConsultarUsuarioId(Request $request)
+    public function ConsultarId(Request $request)
     {
         try {
-            $usuario = Usuario::where('id','=',$request->get('id'))->get();
+            $usuario = Inmueble::where('id','=',$request->get('id'))->get();
 
             if ($usuario) {
                 return response()->json(array(
@@ -200,7 +207,7 @@ class inmuebleController extends Controller
         }
     }
 
-    public function ConsultarInmueble(Request $request)
+    public function Consultar(Request $request)
     {
         $currentPage = $request->get('pagina');
 
@@ -214,15 +221,12 @@ class inmuebleController extends Controller
             if ($request->get('buscar')) {
                 $inmueble = Inmueble::select('inmueble.*','estado_inmueble.nombre as estado_inmueble')
                                     ->join('estado_inmueble','inmueble.id_estado_inmueble','=','estado_inmueble.id')
+                                    ->whereRaw("(inmueble.nombre like '%".$request->get('buscar')."%'
+                                                 OR inmueble.valor like '%".$request->get('buscar')."%'
+                                                 OR inmueble.contacto like '%".$request->get('buscar')."%')")
                                     ->where('inmueble.estado', '=', '1')
-                                    ->where('inmueble.nombre', 'like', '%'.$request->get('buscar').'%')
-                                    ->orwhere('inmueble.valor', 'like', '%'.$request->get('buscar').'%')
-                                    ->orwhere('inmueble.contacto', 'like', '%'.$request->get('buscar').'%')
                                     ->orderBy('inmueble.nombre', 'DESC')
                                     ->paginate($request->get('tamanhioPagina'));
-
-                print_r($inmueble);
-                die;
             }
             else {
 
