@@ -39,3 +39,7 @@ Route::post('/administrador/bienesInmuebles/inicio/buscar/id','InmuebleControlle
 Route::post('/administrador/bienesInmuebles/inicio/registrar','InmuebleController@Guardar');
 Route::post('/administrador/bienesInmuebles/inicio/actualizar','InmuebleController@Actualizar');
 Route::post('/administrador/bienesInmuebles/inicio/deshabilitar','InmuebleController@Deshabilitar');
+
+Route::post('/administrador/bienesInmuebles/imagenes/guardar','ImagenController@Guardar');
+Route::post('/administrador/bienesInmuebles/imagenes/buscar','ImagenController@Consultar');
+Route::post('/administrador/bienesInmuebles/imagenes/eliminar','ImagenController@Eliminar');

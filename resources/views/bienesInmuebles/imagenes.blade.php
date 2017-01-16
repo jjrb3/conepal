@@ -10,67 +10,42 @@
 
             <div class="col-md-12">
 
-                <form class="form-horizontal">
+                <div class="form-horizontal">
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="email">Nombre:</label>
-                        <div class="col-sm-3">
-                            <input type="email" class="form-control" id="usuario" placeholder="Ingresar Nombre">
+                        <form id="imagen" enctype="multipart/form-data" accept-charset="UTF-8">
+                            <input type="hidden" value="<?=$_REQUEST['id'];?>" id="id" name="id">
+                            <label class="control-label col-sm-2" for="email">Seleccione la imagen:</label>
+                            <div class="col-sm-2">
+                                <input type="file" class="form-control" id="archivo" value="Examinar" name="imagen">
+                            </div>
+                        </form>
+                        <div class="col-sm-2" style="margin-left:-20px;">
+                            <button class="btn btn-danger" onclick="guardar()">Subir</button>
                         </div>
-                        <div class="col-sm-2">
-                            <input type="file" class="form-control" value="Examinar" name="">
+                        <div class="col-sm-12">
+                            <br>
+                            <div id="mensaje"></div>
                         </div>
                     </div>
                     <center>
-
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="col-sm-4"> <div class="panel panel-primary">
-                                        <div class="panel-heading">Imagen</div>
-                                        <div class="panel-body"><img src="../images/logo.png"><br><input type="button" value="Examinar" name=""></div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4"> <div class="panel panel-primary">
-                                        <div class="panel-heading">Imagen</div>
-                                        <div class="panel-body"><img src="../images/logo.png"><br><input type="button" value="Examinar" name=""></div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4"> <div class="panel panel-primary">
-                                        <div class="panel-heading">Imagen</div>
-                                        <div class="panel-body"><img src="../images/logo.png"><br><input type="button" value="Examinar" name=""></div>
-                                    </div>
+                                <div id="galeria">
+
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="col-sm-4"> <div class="panel panel-primary">
-                                        <div class="panel-heading">Imagen</div>
-                                        <div class="panel-body"><img src="../images/logo.png"><br><input type="button" value="Examinar" name=""></div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4"> <div class="panel panel-primary">
-                                        <div class="panel-heading">Imagen</div>
-                                        <div class="panel-body"><img src="../images/logo.png"><br><input type="button" value="Examinar" name=""></div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4"> <div class="panel panel-primary">
-                                        <div class="panel-heading">Imagen</div>
-                                        <div class="panel-body"><img src="../images/logo.png"><br><input type="button" value="Examinar" name=""></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </center>
 
-                </form>
+                </div>
 
 
             </div>
         </div>
-
-        <center> <a href="../bienes/consultar.blade.php"><button type="submit" class="btn btn-danger">Regresar</button></a>
+        <br>
+        <center> <a href="{{asset('administrador/bienesInmuebles/inicio')}}"><button type="submit" class="btn btn-danger">Regresar</button></a>
 
     </div>
+    <script type="text/javascript" src="{{asset('js/bienesInmuebles/imagenes.js')}}"></script>
+    <script>buscar();</script>
 @endsection

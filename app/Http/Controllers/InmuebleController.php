@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 
 
-class inmuebleController extends Controller
+class InmuebleController extends Controller
 {
     public function Deshabilitar(Request $request)
     {
