@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Inmueble;
-use App\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 
