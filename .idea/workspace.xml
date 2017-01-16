@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="406e1649-fca8-463a-9e06-22274901dc35" name="Default" comment="Configuracion y conexion de FTP y Git en phpStorm">
+    <list default="true" id="406e1649-fca8-463a-9e06-22274901dc35" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/inicio.blade.php" afterPath="$PROJECT_DIR$/resources/views/inicio.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -167,7 +166,7 @@
       <workItem from="1481990590444" duration="738000" />
       <workItem from="1481993589308" duration="1227000" />
       <workItem from="1481996549544" duration="365000" />
-      <workItem from="1484580186053" duration="2663000" />
+      <workItem from="1484580186053" duration="2670000" />
     </task>
     <task id="LOCAL-00001" summary="Configuracion y conexion de FTP y Git en phpStorm">
       <created>1484582200412</created>
@@ -176,11 +175,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484582200412</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Configuracion y conexion de FTP y Git en phpStorm">
+      <created>1484582866367</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1484582866367</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5109000" />
+    <option name="totallyTimeSpent" value="5116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
