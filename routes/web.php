@@ -20,7 +20,7 @@ Route::get('/administrador/cerrarSession','SesionController@CerrarSesion');
 
 // Administracion
 Route::get('/administrador/inicio',function(Request $request){
-    return View::make('administrador.inicio',['nombres' => $request->session()->get('nombres')]);
+    return !$request->session()->get('nombres') ? redirect('/inicio') : View::make('administrador.inicio',['nombres' => $request->session()->get('nombres')]);
 });
 
 // Sesion de usuario
