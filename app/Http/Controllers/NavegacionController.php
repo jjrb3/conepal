@@ -27,7 +27,8 @@ class NavegacionController extends Controller
 
     public function Usuario($pagina) {
 
-        return View($pagina,['menu' => $this->obtenerMenu($pagina)]);
+        return View($pagina,['menu' => $this->obtenerMenu($pagina),
+                             'informacionPagina' => InformacionPaginaController::ConsultarInformacionPagina(),]);
     }
 
 

@@ -54,7 +54,7 @@
 	<div class="container">
 		<!-- Header Starts -->
 		<div class="header">
-			<a href="index.php"><img src="tema/images/logo.png" alt="Realestate"></a>
+			<a href="inicio"><img src="tema/images/logo.png" alt="Realestate"></a>
 			<ul class="pull-right">
 				<li><a href="buysalerent.php">Compradas</a></li>
 				<li><a href="buysalerent.php">En venta</a></li>

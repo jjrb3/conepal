@@ -4,7 +4,7 @@
 	<!-- banner -->
 	<div class="inside-banner">
 		<div class="container">
-			<span class="pull-right"><a href="#">Home</a> / Contácto</span>
+			<span class="pull-right"><a href="inicio">Home</a> / Contácto</span>
 			<h2>Contácto</h2>
 		</div>
 	</div>
