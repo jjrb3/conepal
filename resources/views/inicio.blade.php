@@ -93,9 +93,8 @@
 				<div class="row">
 					<center><h1>CONIPAL</h1></center>
 					<div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
-						<p>Las mejores ofertas las encuentras en nuestra inmobiliaria<BR>
-							Busca nuestras propiedades de la forma mas facil.</p>
-
+						<p>Las mejores ofertas las encuentras en nuestra inmobiliaria<br>
+							Busca nuestras propiedades de la forma mas fácil.</p>
 						<center><button class="btn btn-info"><a style="color: white;" href="ingresar" target="_blank">Ingresar</a></button> </center>
 					</div>
 
@@ -104,31 +103,23 @@
 						<div class="row">
 							<div class="col-lg-3 col-sm-3 ">
 								<select class="form-control">
-									<option>Categoria</option>
-									<option>Compradas</option>
-									<option>Alquiladas</option>
-									<option>En Ventas</option>
+									<option value="">Estado</option>
+									@foreach ($estadoInmueble as $estado)
+										<option value="{{$estado['id']}}">{{$estado['nombre']}}</option>
+									@endforeach
 								</select>
 							</div>
-							<div class="col-lg-3 col-sm-4">
-								<select class="form-control">
+							<div class="col-lg-6 col-sm-4">
+								<select class="form-control" id="estado" name="estado">
 									<option>Precio</option>
-									<option>$150,000 - $200,000</option>
-									<option>$200,000 - $250,000</option>
-									<option>$250,000 - $300,000</option>
-									<option>$300,000 - above</option>
+									@for($i=0;$i<10;$i++)
+										<option>${{number_format(($i) * 50000000)}} - ${{number_format(($i+1) * 50000000)}}</option>
+									@endfor
+									<option value="500000000;10000000000">$500,000,000 - En adelante</option>
 								</select>
 							</div>
 							<div class="col-lg-3 col-sm-4">
-								<select class="form-control">
-									<option>Propiedades</option>
-									<option>Apartamentos</option>
-									<option>Edificios</option>
-									<option>Oficinas</option>
-								</select>
-							</div>
-							<div class="col-lg-3 col-sm-4">
-								<button class="btn btn-success"  onclick="window.location.href='buscador'">Find Now</button>
+								<button class="btn btn-success"  onclick="window.location.href='buscador'">Buscar</button>
 							</div>
 						</div>
 
@@ -150,7 +141,6 @@
 					</div>
 					<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
 					<p class="price">Precio: $234,900</p>
-					<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
 					<a class="btn btn-primary" href="property-detail.php">Ver Detalles</a>
 				</div>
 				<div class="properties">
@@ -159,21 +149,18 @@
 					</div>
 					<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
 					<p class="price">Precio: $234,900</p>
-					<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
 					<a class="btn btn-primary" href="property-detail.php">Ver Detalles</a>
 				</div>
 				<div class="properties">
 					<div class="image-holder"><img src="{{asset('tema/images/properties/3.jpg')}}" class="img-responsive" alt="properties"/></div>
 					<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
 					<p class="price">Precio: $234,900</p>
-					<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
 					<a class="btn btn-primary" href="property-detail.php">Ver Detalles</a>
 				</div>
 				<div class="properties">
 					<div class="image-holder"><img src="{{asset('tema/images/properties/4.jpg')}}" class="img-responsive" alt="properties"/></div>
 					<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
 					<p class="price">Precio: $234,900</p>
-					<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
 					<a class="btn btn-primary" href="property-detail.php">Ver Detalles</a>
 				</div>
 				<div class="properties">
@@ -182,7 +169,6 @@
 					</div>
 					<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
 					<p class="price">Precio: $234,900</p>
-					<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
 					<a class="btn btn-primary" href="property-detail.php">Ver Detalles</a>
 				</div>
 				<div class="properties">
@@ -191,7 +177,6 @@
 					</div>
 					<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
 					<p class="price">Precio: $234,900</p>
-					<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
 					<a class="btn btn-primary" href="property-detail.php">Ver Detalles</a>
 				</div>
 				<div class="properties">
@@ -200,35 +185,30 @@
 					</div>
 					<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
 					<p class="price">Precio: $234,900</p>
-					<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
 					<a class="btn btn-primary" href="property-detail.php">Ver Detalles</a>
 				</div>
 				<div class="properties">
 					<div class="image-holder"><img src="{{asset('tema/images/properties/4.jpg')}}" class="img-responsive" alt="properties"/></div>
 					<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
 					<p class="price">Precio: $234,900</p>
-					<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
 					<a class="btn btn-primary" href="property-detail.php">Ver Detalles</a>
 				</div>
 				<div class="properties">
 					<div class="image-holder"><img src="{{asset('tema/images/properties/1.jpg')}}" class="img-responsive" alt="properties"/></div>
 					<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
 					<p class="price">Precio: $234,900</p>
-					<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
 					<a class="btn btn-primary" href="property-detail.php">Ver Detalles</a>
 				</div>
 				<div class="properties">
 					<div class="image-holder"><img src="{{asset('tema/images/properties/2.jpg')}}" class="img-responsive" alt="properties"/></div>
 					<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
 					<p class="price">Precio: $234,900</p>
-					<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
 					<a class="btn btn-primary" href="property-detail.php">Ver Detalles</a>
 				</div>
 				<div class="properties">
 					<div class="image-holder"><img src="{{asset('tema/images/properties/3.jpg')}}" class="img-responsive" alt="properties"/></div>
 					<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
 					<p class="price">Precio: $234,900</p>
-					<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
 					<a class="btn btn-primary" href="property-detail.php">Ver Detalles</a>
 				</div>
 
