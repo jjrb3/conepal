@@ -278,9 +278,9 @@ class ComposerStaticInit7aeeea2c3a102aceb410b9d99a298bba
     );
 
     public static $classMap = array (
-        'CreateInmuebleTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_185309_create_inmueble_table.php',
-        'CreateSEstadoInmuebleTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_184443_create_s_estado_inmueble_table.php',
-        'CreateSUsuarioTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_182613_create_s_usuario_table.php',
+        'CreateSEstadoInmuebleTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_002947_create_s_estado_inmueble_table.php',
+        'CreateSInmuebleTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_002958_create_s_inmueble_table.php',
+        'CreateSUsuarioTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_002914_create_s_usuario_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',

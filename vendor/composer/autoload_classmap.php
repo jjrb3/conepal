@@ -6,9 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateInmuebleTable' => $baseDir . '/database/migrations/2017_01_16_185309_create_inmueble_table.php',
-    'CreateSEstadoInmuebleTable' => $baseDir . '/database/migrations/2017_01_16_184443_create_s_estado_inmueble_table.php',
-    'CreateSUsuarioTable' => $baseDir . '/database/migrations/2017_01_16_182613_create_s_usuario_table.php',
+    'CreateSEstadoInmuebleTable' => $baseDir . '/database/migrations/2017_01_17_002947_create_s_estado_inmueble_table.php',
+    'CreateSInmuebleTable' => $baseDir . '/database/migrations/2017_01_17_002958_create_s_inmueble_table.php',
+    'CreateSUsuarioTable' => $baseDir . '/database/migrations/2017_01_17_002914_create_s_usuario_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
