@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="406e1649-fca8-463a-9e06-22274901dc35" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,11 +39,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2017_01_17_002958_create_s_inmueble_table.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2017_01_17_002958_create_s_inmueble_table.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_17_002958_create_s_inmueble_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+            <state relative-caret-position="445">
+              <caret line="36" column="5" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="36" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2017_01_17_003758_create_s_informacion_pagina_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_17_003758_create_s_informacion_pagina_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2017_01_17_003747_create_s_imagen_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_17_003747_create_s_imagen_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -81,6 +94,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2017_01_17_002914_create_s_usuario_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_01_17_002947_create_s_estado_inmueble_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_01_17_002958_create_s_inmueble_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2017_01_17_003747_create_s_imagen_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2017_01_17_003758_create_s_informacion_pagina_table.php" />
       </list>
     </option>
   </component>
@@ -258,7 +273,7 @@
       <workItem from="1484591021881" duration="2380000" />
       <workItem from="1484611744808" duration="3000" />
       <workItem from="1484612143685" duration="118000" />
-      <workItem from="1484612267225" duration="1027000" />
+      <workItem from="1484612267225" duration="1468000" />
     </task>
     <task id="LOCAL-00001" summary="Configuracion y conexion de FTP y Git en phpStorm">
       <created>1484582200412</created>
@@ -295,11 +310,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484612474289</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Migraciones Parte 1">
+      <created>1484613331364</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1484613331364</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9817000" />
+    <option name="totallyTimeSpent" value="10258000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -338,7 +360,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Configuracion y conexion de FTP y Git en phpStorm" />
     <MESSAGE value="Configuracion y conexion de FTP y Git en phpStorm mi maquina" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configuracion y conexion de FTP y Git en phpStorm mi maquina" />
+    <MESSAGE value="Migraciones Parte 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Migraciones Parte 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -565,10 +588,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_17_003747_create_s_imagen_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_17_002958_create_s_inmueble_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        <state relative-caret-position="445">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="36" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_17_003758_create_s_informacion_pagina_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
           <folding />
         </state>
       </provider>

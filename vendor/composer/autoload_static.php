@@ -279,6 +279,8 @@ class ComposerStaticInit7aeeea2c3a102aceb410b9d99a298bba
 
     public static $classMap = array (
         'CreateSEstadoInmuebleTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_002947_create_s_estado_inmueble_table.php',
+        'CreateSImagenTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_003747_create_s_imagen_table.php',
+        'CreateSInformacionPaginaTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_003758_create_s_informacion_pagina_table.php',
         'CreateSInmuebleTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_002958_create_s_inmueble_table.php',
         'CreateSUsuarioTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_002914_create_s_usuario_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',

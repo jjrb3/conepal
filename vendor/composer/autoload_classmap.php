@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CreateSEstadoInmuebleTable' => $baseDir . '/database/migrations/2017_01_17_002947_create_s_estado_inmueble_table.php',
+    'CreateSImagenTable' => $baseDir . '/database/migrations/2017_01_17_003747_create_s_imagen_table.php',
+    'CreateSInformacionPaginaTable' => $baseDir . '/database/migrations/2017_01_17_003758_create_s_informacion_pagina_table.php',
     'CreateSInmuebleTable' => $baseDir . '/database/migrations/2017_01_17_002958_create_s_inmueble_table.php',
     'CreateSUsuarioTable' => $baseDir . '/database/migrations/2017_01_17_002914_create_s_usuario_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
