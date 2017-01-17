@@ -224,7 +224,7 @@ class InmuebleController extends Controller
                                                  OR inmueble.valor like '%".$request->get('buscar')."%'
                                                  OR inmueble.contacto like '%".$request->get('buscar')."%')")
                                     ->where('inmueble.estado', '=', '1')
-                                    ->orderBy('inmueble.nombre', 'DESC')
+                                    ->orderBy('inmueble.nombre', 'ASC')
                                     ->paginate($request->get('tamanhioPagina'));
             }
             else {
@@ -232,7 +232,7 @@ class InmuebleController extends Controller
                 $inmueble = Inmueble::select('inmueble.*','estado_inmueble.nombre as estado_inmueble')
                                     ->join('estado_inmueble','inmueble.id_estado_inmueble','=','estado_inmueble.id')
                                     ->where('inmueble.estado', '=', '1')
-                                    ->orderBy('inmueble.nombre', 'DESC')
+                                    ->orderBy('inmueble.nombre', 'ASC')
                                     ->paginate($request->get('tamanhioPagina'));
             }
 

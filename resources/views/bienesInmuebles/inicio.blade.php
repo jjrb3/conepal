@@ -24,7 +24,7 @@
                 <div id="mensaje"></div>
                 <br>
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Listado de Bienes & Inmuebles asdadas</div>
+                    <div class="panel-heading">Listado de Bienes & Inmuebles</div>
                     <div id="tabla">
                     </div>
                 </div>
