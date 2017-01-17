@@ -284,6 +284,7 @@ class ComposerStaticInit7aeeea2c3a102aceb410b9d99a298bba
         'CreateSInmuebleTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_002958_create_s_inmueble_table.php',
         'CreateSUsuarioTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_17_002914_create_s_usuario_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
+        'EstadoInmueble' => __DIR__ . '/../..' . '/database/seeds/EstadoInmueble.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
@@ -355,6 +356,7 @@ class ComposerStaticInit7aeeea2c3a102aceb410b9d99a298bba
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'InformacionPagina' => __DIR__ . '/../..' . '/database/seeds/InformacionPagina.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
@@ -811,6 +813,7 @@ class ComposerStaticInit7aeeea2c3a102aceb410b9d99a298bba
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'Usuario' => __DIR__ . '/../..' . '/database/seeds/Usuario.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

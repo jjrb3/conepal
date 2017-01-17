@@ -237,7 +237,6 @@ class InmuebleController extends Controller
             }
 
 
-
             if (count($inmueble)) {
                 return response()->json(array(
                     'resultado' => 1,
