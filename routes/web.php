@@ -13,6 +13,11 @@
 
 use Illuminate\Http\Request;
 
+// Link principal
+Route::get('/',function(){
+    return redirect('inicio');
+});
+
 Route::get('/{pagina}','NavegacionController@Usuario');
 Route::get('/administrador/{carpeta}/{pagina}','NavegacionController@Administrador');
 Route::post('/ingresar/verificar','SesionController@VerificarUsuario');

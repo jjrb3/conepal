@@ -57,27 +57,27 @@
 					<div class="hot-properties hidden-xs">
 						<h4>Hot Properties</h4>
 						<div class="row">
-							<div class="col-lg-4 col-sm-5"><img src="tema/images/properties/1.jpg" class="img-responsive img-circle" alt="properties"></div>
+							<div class="col-lg-4 col-sm-5"><img src="{{asset('tema/images/properties/1.jpg')}}" class="img-responsive img-circle" alt="properties"></div>
 							<div class="col-lg-8 col-sm-7">
 								<h5><a href="property-detail.php">Integer sed porta quam</a></h5>
 								<p class="price">$300,000</p> </div>
 						</div>
 						<div class="row">
-							<div class="col-lg-4 col-sm-5"><img src="tema/images/properties/1.jpg" class="img-responsive img-circle" alt="properties"></div>
-							<div class="col-lg-8 col-sm-7">
-								<h5><a href="property-detail.php">Integer sed porta quam</a></h5>
-								<p class="price">$300,000</p> </div>
-						</div>
-
-						<div class="row">
-							<div class="col-lg-4 col-sm-5"><img src="tema/images/properties/1.jpg" class="img-responsive img-circle" alt="properties"></div>
+							<div class="col-lg-4 col-sm-5"><img src="{{asset('tema/images/properties/1.jpg')}}" class="img-responsive img-circle" alt="properties"></div>
 							<div class="col-lg-8 col-sm-7">
 								<h5><a href="property-detail.php">Integer sed porta quam</a></h5>
 								<p class="price">$300,000</p> </div>
 						</div>
 
 						<div class="row">
-							<div class="col-lg-4 col-sm-5"><img src="tema/images/properties/1.jpg" class="img-responsive img-circle" alt="properties"></div>
+							<div class="col-lg-4 col-sm-5"><img src="{{asset('tema/images/properties/1.jpg')}}" class="img-responsive img-circle" alt="properties"></div>
+							<div class="col-lg-8 col-sm-7">
+								<h5><a href="property-detail.php">Integer sed porta quam</a></h5>
+								<p class="price">$300,000</p> </div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-4 col-sm-5"><img src="{{asset('tema/images/properties/1.jpg')}}" class="img-responsive img-circle" alt="properties"></div>
 							<div class="col-lg-8 col-sm-7">
 								<h5><a href="property-detail.php">Integer sed porta quam</a></h5>
 								<p class="price">$300,000</p> </div>
@@ -104,7 +104,7 @@
 						<!-- properties -->
 						<div class="col-lg-4 col-sm-6">
 							<div class="properties">
-								<div class="image-holder"><img src="images/properties/1.jpg" class="img-responsive" alt="properties">
+								<div class="image-holder"><img src="{{asset('tema/images/properties/1.jpg')}}" class="img-responsive" alt="properties">
 									<div class="status sold">Sold</div>
 								</div>
 								<h4><a href="property-detail.php">Royal Inn</a></h4>
@@ -119,7 +119,7 @@
 						<!-- properties -->
 						<div class="col-lg-4 col-sm-6">
 							<div class="properties">
-								<div class="image-holder"><img src="images/properties/2.jpg" class="img-responsive" alt="properties">
+								<div class="image-holder"><img src="{{asset('tema/images/properties/2.jpg')}}" class="img-responsive" alt="properties">
 									<div class="status sold">Sold</div>
 								</div>
 								<h4><a href="property-detail.php">Royal Inn</a></h4>
@@ -133,7 +133,7 @@
 						<!-- properties -->
 						<div class="col-lg-4 col-sm-6">
 							<div class="properties">
-								<div class="image-holder"><img src="images/properties/3.jpg" class="img-responsive" alt="properties">
+								<div class="image-holder"><img src="{{asset('tema/images/properties/3.jpg')}}" class="img-responsive" alt="properties">
 									<div class="status sold">Sold</div>
 								</div>
 								<h4><a href="property-detail.php">Royal Inn</a></h4>
@@ -147,7 +147,7 @@
 						<!-- properties -->
 						<div class="col-lg-4 col-sm-6">
 							<div class="properties">
-								<div class="image-holder"><img src="images/properties/1.jpg" class="img-responsive" alt="properties">
+								<div class="image-holder"><img src="{{asset('tema/images/properties/1.jpg')}}" class="img-responsive" alt="properties">
 									<div class="status sold">Sold</div>
 								</div>
 								<h4><a href="property-detail.php">Royal Inn</a></h4>
@@ -161,7 +161,7 @@
 						<!-- properties -->
 						<div class="col-lg-4 col-sm-6">
 							<div class="properties">
-								<div class="image-holder"><img src="images/properties/4.jpg" class="img-responsive" alt="properties">
+								<div class="image-holder"><img src="{{asset('tema/images/properties/4.jpg')}}" class="img-responsive" alt="properties">
 									<div class="status sold">Sold</div>
 								</div>
 								<h4><a href="property-detail.php">Royal Inn</a></h4>
@@ -175,7 +175,7 @@
 						<!-- properties -->
 						<div class="col-lg-4 col-sm-6">
 							<div class="properties">
-								<div class="image-holder"><img src="images/properties/1.jpg" class="img-responsive" alt="properties">
+								<div class="image-holder"><img src="{{asset('tema/images/properties/1.jpg')}}" class="img-responsive" alt="properties">
 									<div class="status sold">Sold</div>
 								</div>
 								<h4><a href="property-detail.php">Royal Inn</a></h4>
@@ -189,7 +189,7 @@
 						<!-- properties -->
 						<div class="col-lg-4 col-sm-6">
 							<div class="properties">
-								<div class="image-holder"><img src="images/properties/4.jpg" class="img-responsive" alt="properties">
+								<div class="image-holder"><img src="{{asset('tema/images/properties/4.jpg')}}" class="img-responsive" alt="properties">
 									<div class="status sold">Sold</div>
 								</div>
 								<h4><a href="property-detail.php">Royal Inn</a></h4>
@@ -203,7 +203,7 @@
 						<!-- properties -->
 						<div class="col-lg-4 col-sm-6">
 							<div class="properties">
-								<div class="image-holder"><img src="images/properties/3.jpg" class="img-responsive" alt="properties">
+								<div class="image-holder"><img src="{{asset('tema/images/properties/3.jpg')}}" class="img-responsive" alt="properties">
 									<div class="status sold">Sold</div>
 								</div>
 								<h4><a href="property-detail.php">Royal Inn</a></h4>
@@ -217,7 +217,7 @@
 						<!-- properties -->
 						<div class="col-lg-4 col-sm-6">
 							<div class="properties">
-								<div class="image-holder"><img src="images/properties/2.jpg" class="img-responsive" alt="properties">
+								<div class="image-holder"><img src="{{asset('tema/images/properties/2.jpg')}}" class="img-responsive" alt="properties">
 									<div class="status sold">Sold</div>
 								</div>
 								<h4><a href="property-detail.php">Royal Inn</a></h4>
@@ -230,21 +230,7 @@
 						<!-- properties -->
 						<div class="col-lg-4 col-sm-6">
 							<div class="properties">
-								<div class="image-holder"><img src="images/properties/1.jpg" class="img-responsive" alt="properties">
-									<div class="status sold">Sold</div>
-								</div>
-								<h4><a href="property-detail.php">Royal Inn</a></h4>
-								<p class="price">Price: $234,900</p>
-								<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-								<a class="btn btn-primary" href="property-detail.php">View Details</a>
-							</div>
-						</div>
-						<!-- properties -->
-
-						<!-- properties -->
-						<div class="col-lg-4 col-sm-6">
-							<div class="properties">
-								<div class="image-holder"><img src="images/properties/4.jpg" class="img-responsive" alt="properties">
+								<div class="image-holder"><img src="{{asset('tema/images/properties/1.jpg')}}" class="img-responsive" alt="properties">
 									<div class="status sold">Sold</div>
 								</div>
 								<h4><a href="property-detail.php">Royal Inn</a></h4>
@@ -258,7 +244,21 @@
 						<!-- properties -->
 						<div class="col-lg-4 col-sm-6">
 							<div class="properties">
-								<div class="image-holder"><img src="images/properties/3.jpg" class="img-responsive" alt="properties">
+								<div class="image-holder"><img src="{{asset('tema/images/properties/4.jpg')}}" class="img-responsive" alt="properties">
+									<div class="status sold">Sold</div>
+								</div>
+								<h4><a href="property-detail.php">Royal Inn</a></h4>
+								<p class="price">Price: $234,900</p>
+								<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
+								<a class="btn btn-primary" href="property-detail.php">View Details</a>
+							</div>
+						</div>
+						<!-- properties -->
+
+						<!-- properties -->
+						<div class="col-lg-4 col-sm-6">
+							<div class="properties">
+								<div class="image-holder"><img src="{{asset('tema/images/properties/3.jpg')}}" class="img-responsive" alt="properties">
 									<div class="status sold">Sold</div>
 								</div>
 								<h4><a href="property-detail.php">Royal Inn</a></h4>

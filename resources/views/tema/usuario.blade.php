@@ -54,7 +54,7 @@
 	<div class="container">
 		<!-- Header Starts -->
 		<div class="header">
-			<a href="inicio"><img src="tema/images/logo.png" alt="Realestate"></a>
+			<a href="inicio"><img src="{{asset('tema/images/logo.png')}}" alt="Realestate"></a>
 			<ul class="pull-right">
 				<li><a href="buysalerent.php">Compradas</a></li>
 				<li><a href="buysalerent.php">En venta</a></li>
@@ -84,14 +84,14 @@
 
 					<div class="col-lg-3 col-sm-3">
 						<h4>Nosotros</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec hendrerit augue. Proin vel metus cursus, dictum risus sit amet, vestibulum tellus. Nam dictum id nisl eget faucibus.</p>
+						<p>{{$informacionPagina[0]['nosotros']}}</p>
 					</div>
 
 					<div class="col-lg-3 col-sm-3">
 						<h4>Siguenos</h4>
-						<a href="#"><img src="tema/images/facebook.png" alt="facebook"></a>
-						<a href="#"><img src="tema/images/twitter.png" alt="twitter"></a>
-						<a href="#"><img src="tema/images/instagram.png" alt="instagram"></a>
+						<a href="#"><img src="{{asset('tema/images/facebook.png')}}" alt="facebook"></a>
+						<a href="#"><img src="{{asset('tema/images/twitter.png')}}" alt="twitter"></a>
+						<a href="#"><img src="{{asset('tema/images/instagram.png')}}" alt="instagram"></a>
 					</div>
 
 					<div class="col-lg-3 col-sm-3">

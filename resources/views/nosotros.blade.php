@@ -28,7 +28,6 @@
 						<h3>Visión</h3>
 						<p>{{$informacionPagina[0]['vision']}}</p>
 					@endif
-
 				</div>
 
 			</div>
