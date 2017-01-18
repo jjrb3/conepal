@@ -319,10 +319,11 @@ class InmuebleController extends Controller
                 foreach ($inmueble as $listado) {
 
                     try {
-                        $imagen = Imagen::where('id_inmueble', '=', $listado->id)->get();
+                        $imagen = Imagen::where('id_inmueble', '=', $listado->id)->orderBy('id_inmueble', 'ASC')->get();
 
                         foreach ($imagen as $listadoImagen) {
-                            $arreglo[$listado->id] = $listadoImagen->ruta;
+                            $arreglo[$listado->id][] = $listadoImagen->ruta;
+
                         }
                     }
                     catch (Exception $e) {

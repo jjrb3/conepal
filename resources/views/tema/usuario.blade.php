@@ -57,9 +57,9 @@
 		<div class="header">
 			<a href="inicio"><img src="{{asset('tema/images/logo.png')}}" alt="Realestate"></a>
 			<ul class="pull-right">
-				<li><a href="buysalerent.php">Compradas</a></li>
-				<li><a href="buysalerent.php">En venta</a></li>
-				<li><a href="buysalerent.php">Alquiler</a></li>
+				<li><a href="buscador?estado=1">Compradas</a></li>
+				<li><a href="buscador?estado=2">En venta</a></li>
+				<li><a href="buscador?estado=3">Alquiler</a></li>
 			</ul>
 		</div>
 		<!-- #Header Starts -->
