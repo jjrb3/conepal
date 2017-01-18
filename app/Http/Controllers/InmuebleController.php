@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Inmueble;
+use App\Imagen;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 
@@ -256,6 +257,99 @@ class InmuebleController extends Controller
                 'resultado' => -2,
                 'mensaje'   => 'Grave error: ' . $e,
             ));
+        }
+    }
+
+    public function Buscador(Request $request)
+    {
+        $where = '';
+        $orderBy1 = '';
+        $orderBy2 = '';
+        $condicion = ' ';
+
+        if ($request->get('descripcion')) {
+
+            $where .= "$condicion inmueble.nombre LIKE '%" . $request->get('descripcion') . "%'";
+            $condicion = ' AND ';
+        }
+
+        if ($request->get('estado')) {
+
+            $where .= "$condicion inmueble.estado_inmueble LIKE '%" . $request->get('estado') . "%'";
+            $condicion = ' AND ';
+        }
+
+        if ($request->get('valor')) {
+
+            $arregloValor = explode($request->get('valor'),';');
+
+            $where .= " $condicion inmueble.valor >= " . $arregloValor[0];
+
+            if ($arregloValor[1] != 'adelante') {
+
+                $where .= " $condicion inmueble.valor <= " . $arregloValor[0];
+            }
+        }
+
+        $currentPage = $request->get('pagina');
+
+        // Fuerza a estar en la pagina
+        Paginator::currentPageResolver(function() use ($currentPage) {
+            return $currentPage;
+        });
+
+        try {
+
+            $orderBy1 = !$where ? 'inmueble.nombre' : 'inmueble.id';
+            $orderBy2 = !$where ? 'ASC' : 'DESC';
+            $where    = !$where ? 'inmueble.estado = 1' : 'AND inmueble.estado = 1';
+
+            $inmueble = Inmueble::select('inmueble.*','estado_inmueble.nombre as estado_inmueble')
+                ->join('estado_inmueble','inmueble.id_estado_inmueble','=','estado_inmueble.id')
+                ->whereRaw($where)
+                ->orderBy($orderBy1, $orderBy2)
+                ->paginate($request->get('tamanhioPagina'));
+
+
+            if (count($inmueble)) {
+
+                // Busqueda de imagenes
+                $arreglo = array();
+
+                foreach ($inmueble as $listado) {
+
+                    try {
+                        $imagen = Imagen::where('id_inmueble', '=', $listado->id)->get();
+
+                        foreach ($imagen as $listadoImagen) {
+                            $arreglo[$listado->id] = $listadoImagen->ruta;
+                        }
+                    }
+                    catch (Exception $e) {
+                        null;
+                    }
+                }
+                // Fin de busqueda de imagen
+
+                return array(
+                    'resultado' => 1,
+                    'mensaje'   => 'Se econtraron datos',
+                    'datos'      => $inmueble->toArray(),
+                    'imagenes'  => $arreglo
+                );
+            }
+            else {
+                return array(
+                    'resultado' => 0,
+                    'mensaje'   => 'No se encontraron resultados para la consulta',
+                );
+            }
+        }
+        catch (Exception $e) {
+            return array(
+                'resultado' => -2,
+                'mensaje'   => 'Grave error: ' . $e,
+            );
         }
     }
 }

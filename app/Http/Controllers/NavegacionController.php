@@ -12,6 +12,9 @@ use App\Usuario;
 use App\Rol;
 use App\Persona;
 
+use App\Http\Controllers\InmuebleController;
+
+
 class NavegacionController extends Controller
 {
     var $seleccion	= ' class="active" ';
@@ -25,11 +28,14 @@ class NavegacionController extends Controller
                                                                                   'estadoInmueble' => EstadoInmuebleController::Consultar()]);
     }
 
-    public function Usuario($pagina) {
+    public function Usuario(Request $request,$pagina) {
+
+        $inmueble = new InmuebleController();
 
         return View($pagina,['menu' => $this->obtenerMenu($pagina),
                              'informacionPagina' => InformacionPaginaController::ConsultarInformacionPagina(),
-                             'estadoInmueble' => EstadoInmuebleController::Consultar()]);
+                             'estadoInmueble' => EstadoInmuebleController::Consultar(),
+                             'inmuebles' => $inmueble->Buscador($request)]);
     }
 
 

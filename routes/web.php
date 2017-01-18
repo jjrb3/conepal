@@ -28,6 +28,7 @@ Route::get('/administrador/inicio',function(Request $request){
     return !$request->session()->get('nombres') ? redirect('/inicio') : View::make('administrador.inicio',['nombres' => $request->session()->get('nombres')]);
 });
 
+
 // Sesion de usuario
 Route::post('/administrador/usuario/inicio/buscar','UsuarioController@ConsultarUsuario');
 Route::post('/administrador/usuario/inicio/buscar/id','UsuarioController@ConsultarUsuarioId');
@@ -44,6 +45,7 @@ Route::post('/administrador/bienesInmuebles/inicio/buscar/id','InmuebleControlle
 Route::post('/administrador/bienesInmuebles/inicio/registrar','InmuebleController@Guardar');
 Route::post('/administrador/bienesInmuebles/inicio/actualizar','InmuebleController@Actualizar');
 Route::post('/administrador/bienesInmuebles/inicio/deshabilitar','InmuebleController@Deshabilitar');
+Route::get('/administrador/bienesInmuebles/inicio/buscador','InmuebleController@Buscador');
 
 Route::post('/administrador/bienesInmuebles/imagenes/guardar','ImagenController@Guardar');
 Route::post('/administrador/bienesInmuebles/imagenes/buscar','ImagenController@Consultar');

@@ -1,17 +1,38 @@
 @extends('tema.usuario')
 
 @section('content')
-
 	<div class="">
 
 
 		<div id="slider" class="sl-slider-wrapper">
-
+			<input type="hidden" >
 			<div class="sl-slider">
+				<div id="slider"></div>
+				@if ($inmuebles["resultado"] == 1)
+					@php ($cnt = 0)
+					@foreach($inmuebles["datos"]["data"] as $inmueble)
+						@php ($cnt++)
 
-				<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+						<!--<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="1">
+							<div class="sl-slide-inner">
+
+								<div class="bg-img" style="background-image: url('recursos/imagen_inmueble/{{'1_20170116_020234.jpg'}}');"></div>
+								<h2><a href="#">{{$inmueble['nombre']}}</a></h2>
+								<blockquote>
+									<p class="location"><span class="glyphicon glyphicon-map-marker"></span> 2017 Miramar, Barranquilla/Colombia</p>
+									<p>Hermoso apartamento con un enchapado lujoso, con hermosa vista y excelente sector de barranquilla.</p>
+									<cite>$ 850,000,000</cite>
+
+								</blockquote>
+							</div>
+						</div>-->
+
+					{{$inmueble['nombre']}}
+					@endforeach
+				@endif
+				<!--<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="1">
 					<div class="sl-slide-inner">
-						<div class="bg-img bg-img-1"></div>
+						<div class="bg-img" style="background-image: url('tema/images/slider/1.jpg');"></div>
 						<h2><a href="#">2 Alcobas y cinco cuartos de 270m*2 en venta</a></h2>
 						<blockquote>
 							<p class="location"><span class="glyphicon glyphicon-map-marker"></span> 2017 Miramar, Barranquilla/Colombia</p>
@@ -21,7 +42,7 @@
 					</div>
 				</div>
 
-				<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+				<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="2" data-slice2-scale="1">
 					<div class="sl-slide-inner">
 						<div class="bg-img bg-img-2"></div>
 						<h2><a href="#">2 Alcobas y cinco cuartos de 270m*2 en venta</a></h2>
@@ -33,7 +54,7 @@
 					</div>
 				</div>
 
-				<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+				<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
 					<div class="sl-slide-inner">
 						<div class="bg-img bg-img-3"></div>
 						<h2><a href="#">2 Alcobas y cinco cuartos de 270m*2 en venta</a></h2>
@@ -45,7 +66,7 @@
 					</div>
 				</div>
 
-				<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
+				<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="1">
 					<div class="sl-slide-inner">
 						<div class="bg-img bg-img-4"></div>
 						<h2><a href="#">2 Alcobas y cinco cuartos de 270m*2 en venta</a></h2>
@@ -57,7 +78,7 @@
 					</div>
 				</div>
 
-				<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+				<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
 					<div class="sl-slide-inner">
 						<div class="bg-img bg-img-5"></div>
 						<h2><a href="#">2 Alcobas y cinco cuartos de 270m*2 en venta</a></h2>
@@ -67,7 +88,7 @@
 							<cite>$ 850,000,000</cite>
 						</blockquote>
 					</div>
-				</div>
+				</div>-->
 			</div><!-- /sl-slider -->
 
 
@@ -110,12 +131,12 @@
 								</select>
 							</div>
 							<div class="col-lg-6 col-sm-4">
-								<select class="form-control" id="estado" name="estado">
+								<select class="form-control" id="valor" name="valor">
 									<option>Precio</option>
 									@for($i=0;$i<10;$i++)
-										<option>${{number_format(($i) * 50000000)}} - ${{number_format(($i+1) * 50000000)}}</option>
+										<option value="{{(($i) * 50000000)}};{{(($i+1) * 50000000)}}">${{number_format(($i) * 50000000)}} - ${{number_format(($i+1) * 50000000)}}</option>
 									@endfor
-									<option value="500000000;10000000000">$500,000,000 - En adelante</option>
+									<option value="500000000;adelante">$500,000,000 - En adelante</option>
 								</select>
 							</div>
 							<div class="col-lg-3 col-sm-4">
@@ -296,5 +317,4 @@
 			</div>
 		</div>
 	</div>
-
 @endsection
