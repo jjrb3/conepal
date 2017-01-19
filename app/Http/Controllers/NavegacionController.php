@@ -31,6 +31,9 @@ class NavegacionController extends Controller
     public function Usuario(Request $request,$pagina) {
 
         $inmueble = new InmuebleController();
+        //$resulado = $inmueble->Buscador($request);
+        //print_r($resulado); // ultima
+        //die;
 
         return View($pagina,['menu' => $this->obtenerMenu($pagina),
                              'informacionPagina' => InformacionPaginaController::ConsultarInformacionPagina(),

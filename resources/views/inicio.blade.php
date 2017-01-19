@@ -75,6 +75,8 @@
 
 					<div class="col-lg-6 col-sm-6">
 						<form action="buscador" method="get">
+							<input type="hidden" name="tamanhioPagina" value="12">
+							<input type="hidden" name="pagina" value="1">
 							<input type="text" name="descripcion" class="form-control" placeholder="Buscar propiedades">
 							<div class="row">
 								<div class="col-lg-3 col-sm-3 ">

@@ -275,19 +275,19 @@ class InmuebleController extends Controller
 
         if ($request->get('estado')) {
 
-            $where .= "$condicion inmueble.estado_inmueble LIKE '%" . $request->get('estado') . "%'";
+            $where .= "$condicion inmueble.id_estado_inmueble = " . $request->get('estado');
             $condicion = ' AND ';
         }
 
         if ($request->get('valor')) {
 
-            $arregloValor = explode($request->get('valor'),';');
+            $arregloValor = explode(';',$request->get('valor'));
 
             $where .= " $condicion inmueble.valor >= " . $arregloValor[0];
 
             if ($arregloValor[1] != 'adelante') {
 
-                $where .= " $condicion inmueble.valor <= " . $arregloValor[0];
+                $where .= " $condicion inmueble.valor <= " . $arregloValor[1];
             }
         }
 
@@ -300,9 +300,9 @@ class InmuebleController extends Controller
 
         try {
 
-            $orderBy1 = !$where ? 'inmueble.nombre' : 'inmueble.id';
-            $orderBy2 = !$where ? 'ASC' : 'DESC';
-            $where    = !$where ? 'inmueble.estado = 1' : 'AND inmueble.estado = 1';
+            $orderBy1  = !$where ? 'inmueble.nombre' : 'inmueble.id';
+            $orderBy2  = !$where ? 'ASC' : 'DESC';
+            $where    .= !$where ? ' inmueble.estado = 1 ' : ' AND inmueble.estado = 1 ';
 
             $inmueble = Inmueble::select('inmueble.*','estado_inmueble.nombre as estado_inmueble')
                 ->join('estado_inmueble','inmueble.id_estado_inmueble','=','estado_inmueble.id')
