@@ -57,9 +57,9 @@
 		<div class="header">
 			<a href="inicio"><img src="{{asset('tema/images/logo.png')}}" alt="Realestate"></a>
 			<ul class="pull-right">
-				<li><a href="buscador?estado=1&tamanhioPagina=12&pagina=1">Compradas</a></li>
-				<li><a href="buscador?estado=2&tamanhioPagina=12&pagina=1">En venta</a></li>
-				<li><a href="buscador?estado=3&tamanhioPagina=12&pagina=1">Alquiler</a></li>
+				<li><a href="buscador?estado=1&tamanhioPagina=12&pagina=1&descripcion=&valor=">Compradas</a></li>
+				<li><a href="buscador?estado=2&tamanhioPagina=12&pagina=1&descripcion=&valor=">En venta</a></li>
+				<li><a href="buscador?estado=3&tamanhioPagina=12&pagina=1&descripcion=&valor=">Alquiler</a></li>
 			</ul>
 		</div>
 		<!-- #Header Starts -->
