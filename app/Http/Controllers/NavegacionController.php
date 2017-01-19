@@ -31,14 +31,11 @@ class NavegacionController extends Controller
     public function Usuario(Request $request,$pagina) {
 
         $inmueble = new InmuebleController();
-        //$resulado = $inmueble->Buscador($request);
-        //print_r($resulado); // ultima
-        //die;
 
         return View($pagina,['menu' => $this->obtenerMenu($pagina),
                              'informacionPagina' => InformacionPaginaController::ConsultarInformacionPagina(),
                              'estadoInmueble' => EstadoInmuebleController::Consultar(),
-                             'inmuebles' => $inmueble->Buscador($request)]);
+                             'inmuebles' => $inmueble->Buscador($request),]);
     }
 
 
@@ -55,7 +52,7 @@ class NavegacionController extends Controller
         $this->menu .= '<li';
         $pagina === "buscador" ? $this->menu .= $this->seleccion : "";
         $pagina === "detalle"  ? $this->menu .= $this->seleccion : "";
-        $this->menu .= '><a href="buscador">Buscador</a></li>';
+        $this->menu .= '><a href="buscador?tamanhioPagina=9&pagina=1&descripcion=&estado=&valor=">Buscador</a></li>';
 
         $this->menu .= '<li';
         $pagina === "contacto" ? $this->menu .= $this->seleccion : "";

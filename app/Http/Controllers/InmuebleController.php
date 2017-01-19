@@ -267,6 +267,12 @@ class InmuebleController extends Controller
         $orderBy2 = '';
         $condicion = ' ';
 
+        if ($request->get('id')) {
+
+            $where .= "$condicion inmueble.id =" . $request->get('id');
+            $condicion = ' AND ';
+        }
+
         if ($request->get('descripcion')) {
 
             $where .= "$condicion inmueble.nombre LIKE '%" . $request->get('descripcion') . "%'";
