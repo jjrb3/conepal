@@ -16,7 +16,7 @@ class UsuarioController extends Controller
 
         try {
             if ($usuario->save()) {
-                $request->get('estado') == 1 ? $mensaje1 = 'habilió' :  $mensaje1 = 'deshabilitó';
+                $request->get('estado') == 1 ? $mensaje1 = 'habilitó' :  $mensaje1 = 'deshabilitó';
                 $request->get('estado') == 1 ? $mensaje2 = 'habilitar' :  $mensaje2 = 'deshabilitar';
                 return response()->json(array(
                     'resultado' => 1,

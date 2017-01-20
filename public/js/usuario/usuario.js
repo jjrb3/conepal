@@ -47,7 +47,7 @@ function habilitar(id) {
 
     var botonSi = '<span onclick="confirmarDeshabilitar('+id+',\'1\')" style="cursor:pointer"><strong>AQUÍ</strong></span>';
 
-    mensajeInformacion('mensaje','Si esta seguro que desea habiliar este usuario presione '+botonSi);
+    mensajeInformacion('mensaje','Si esta seguro que desea habilitar este usuario presione '+botonSi);
 }
 
 function confirmarDeshabilitar(id,estado) {

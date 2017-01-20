@@ -41,7 +41,7 @@ class ImagenController extends Controller
         try {
             if (Imagen::where('id_inmueble', '=', $request->get('id'))->where('ruta', '=', $request->get('ruta'))->delete()) {
 
-                @unlink(public_path().'/recursos/imagen_inmueble/'.$request->get('ruta')); // Eliminamos la imagen
+                @unlink('/home/conip4lc/public_html/recursos/imagen_inmueble/'.$request->get('ruta')); // Eliminamos la imagen
 
                 return response()->json(array(
                     'resultado' => 1,
@@ -63,7 +63,7 @@ class ImagenController extends Controller
 
     public function Guardar(Request $request)
     {
-        $directorio = public_path().'/recursos/imagen_inmueble/';
+        $directorio = '/home/conip4lc/public_html/recursos/imagen_inmueble/';
         $archivo = $request->file('imagen');
         $nombre = explode('.',$archivo->getClientOriginalName());
         $ext = $nombre[1];

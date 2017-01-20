@@ -12,25 +12,26 @@
 				@if ($inmuebles["resultado"] == 1)
 					@php ($cnt = 0)
 					@foreach($inmuebles["datos"]["data"] as $inmueble)
-						@php ($cnt++)
-						{{$inmuebles["imagenes"][$inmueble['id']][0]}}
-						@if ($cnt%2==0)
-							<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="1">
-						@else
-							<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="2" data-slice2-scale="1">
-						@endif
-							<div class="sl-slide-inner">
-								<div class="bg-img" style="background-image: url('{{$url}}recursos/imagen_inmueble/{{$inmuebles["imagenes"][$inmueble['id']][0]}}');"></div>
-								<h2><a href="detalle?id={{$inmueble['id']}}">{{$inmueble['nombre']}}</a></h2>
-								<blockquote>
-									<p class="location"><span class="glyphicon glyphicon-map-marker"></span> {{$inmueble['direccion']}}</p>
-									<p>{{$inmueble['descripcion']}}</p>
-									<cite>$ {{number_format($inmueble['valor'])}}</cite>
-								</blockquote>
+						@if(isset($inmuebles["imagenes"][$inmueble['id']]))
+							@php ($cnt++)
+							@if ($cnt%2==0)
+								<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="1">
+							@else
+								<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="2" data-slice2-scale="1">
+							@endif
+								<div class="sl-slide-inner">
+									<div class="bg-img" style="background-image: url('{{$url}}recursos/imagen_inmueble/{{$inmuebles["imagenes"][$inmueble['id']][0]}}');"></div>
+									<h2><a href="detalle?id={{$inmueble['id']}}">{{$inmueble['nombre']}}</a></h2>
+									<blockquote>
+										<p class="location"><span class="glyphicon glyphicon-map-marker"></span> {{$inmueble['direccion']}}</p>
+										<p>{{$inmueble['descripcion']}}</p>
+										<cite>$ {{number_format($inmueble['valor'])}}</cite>
+									</blockquote>
+								</div>
 							</div>
-						</div>
-						@if($cantidadSlider <= $cnt)
-							@break
+							@if($cantidadSlider <= $cnt)
+								@break
+							@endif
 						@endif
 					@endforeach
 				@endif
@@ -109,26 +110,28 @@
 	</div>
 	<!-- banner -->
 	<div class="container">
-		<div class="properties-listing spacer"> <a style="color: #df0023;" href="buscador" class="pull-right viewall">Ver Todo</a>
+		<div class="properties-listing spacer"> <a style="color: #df0023;" href="buscador?estado=&tamanhioPagina=9&pagina=1&descripcion=&valor=" class="pull-right viewall">Ver Todo</a>
 			<h2>Propiedades</h2>
 			<div id="owl-example" class="owl-carousel">
 
 				@if ($inmuebles["resultado"] == 1)
 					@php ($cnt = 0)
 					@foreach($inmuebles["datos"]["data"] as $inmueble)
-						@php ($cnt++)
-						<div class="properties">
-							<div class="image-holder"><img src="{{$url}}recursos/imagen_inmueble/{{$inmuebles["imagenes"][$inmueble["id"]][0]}}	" class="img-responsive" alt="properties" style="width:198px;height:91px"/>
-								<div class="status sold">{{$inmueble['estado_inmueble']}}</div>
-							</div>
-							<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
-							<p class="price">Precio: $ {{number_format($inmueble['valor'])}}</p>
-							<p class="price">Precio: {{$inmueble['nombre']}}</p>
-							<a class="btn btn-primary" href="detalle?id={{$inmueble['id']}}">Ver Detalles</a>
-						</div>
-					@if($cantidadCarrusel <= $cnt)
-						@break
-					@endif
+						@if(isset($inmuebles["imagenes"][$inmueble['id']]))
+							@php ($cnt++)
+								<div class="properties">
+									<div class="image-holder"><img src="{{$url}}recursos/imagen_inmueble/{{$inmuebles["imagenes"][$inmueble["id"]][0]}}	" class="img-responsive" alt="properties" style="width:198px;height:91px"/>
+										<div class="status sold">{{$inmueble['estado_inmueble']}}</div>
+									</div>
+									<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
+									<p class="price">Precio: $ {{number_format($inmueble['valor'])}}</p>
+									<p class="price">Precio: {{$inmueble['nombre']}}</p>
+									<a class="btn btn-primary" href="detalle?id={{$inmueble['id']}}">Ver Detalles</a>
+								</div>
+							@if($cantidadCarrusel <= $cnt)
+								@break
+							@endif
+						@endif
 					@endforeach
 				@endif
 			</div>
