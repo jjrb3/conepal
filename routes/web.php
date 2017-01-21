@@ -17,14 +17,8 @@ use App\Mail\EnvioContacto;
 // Envio de correo
 Route::get('enviarCorreo', function () {
     Mail::to('jjrb6@hotmail.com')->send(new EnvioContacto());
-    return ('contacto');
+    return redirect('/contacto?envio=true');
 });
-
-Route::get('disenhioContacto', function (Request $request) {
-
-    return View::make('email.contacto');
-});
-
 
 // Link principal
 Route::get('/',function(){

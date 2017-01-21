@@ -8,10 +8,10 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Message;
 
+use Illuminate\Http\Request;
+
 class EnvioContacto extends Mailable
 {
-    public $total = 30;
-
     use Queueable, SerializesModels;
 
     public function __construct()
@@ -19,13 +19,17 @@ class EnvioContacto extends Mailable
 
     }
 
-    public function build()
+    public function build(Request $request)
     {
         $address = 'info@conipal.com.co';
         $name = 'CONIPAL - Info';
         $subject = 'Consulta';
 
-        return $this->view('email.contacto')
+
+        return $this->view('email.contacto',['nombre'=>$request->get('nombre'),
+                                             'email'=>$request->get('email'),
+                                             'telefono'=>$request->get('telefono'),
+                                             'mensaje'=>$request->get('mensaje')])
             ->from($address, $name)
             ->cc($address, $name)
             ->bcc($address, $name)
