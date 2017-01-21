@@ -158,10 +158,11 @@
 
 		<div class="spacer">
 			<div class="row">
-				<div class="col-lg-6 col-sm-9 recent-view">
-					<h3>Contamos</h3>
-					<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.<br><a style="color: #df0023;" href="about.php">Ver Mas</a></p>
-
+				<div class="col-lg-12 col-sm-9 recent-view">
+					<center><h3>Contamos</h3>
+					<p>Somos la empresa numero 1 en compra, venta y alquileres de propiedades en Colombia
+						para mas informacion dar click en <br><a style="color: #df0023;" href="nosotros">Ver Mas</a></p>
+					</center>
 				</div>
 			</div>
 		</div>
