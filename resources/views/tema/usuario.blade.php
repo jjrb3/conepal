@@ -77,9 +77,9 @@
 						<h4>Menus</h4>
 						<ul class="row">
 							<li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.php">Nosotros</a></li>
-							<li class="col-lg-12 col-sm-12 col-xs-3"><a href="agents.php">Agents</a></li>
-							<li class="col-lg-12 col-sm-12 col-xs-3"><a href="blog.php">Blog</a></li>
-							<li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contácto</a></li>
+							<li class="col-lg-12 col-sm-12 col-xs-3"><a href="agents.php">Buscador</a></li>
+							<li class="col-lg-12 col-sm-12 col-xs-3"><a href="blog.php">Contácto</a></li>
+							<li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Ingresar</a></li>
 						</ul>
 					</div>
 
@@ -91,21 +91,26 @@
 					<div class="col-lg-3 col-sm-3">
 						<h4>Siguenos</h4>
 						<a href="#"><img src="{{asset('tema/images/facebook.png')}}" alt="facebook"></a>
-						<a href="#"><img src="{{asset('tema/images/twitter.png')}}" alt="twitter"></a>
-						<a href="#"><img src="{{asset('tema/images/instagram.png')}}" alt="instagram"></a>
+						<a href="https://twitter.com/conipal_sas"><img src="{{asset('tema/images/twitter.png')}}" alt="twitter"></a>
+						<a href="https://www.instagram.com/conipalcolombia/"><img src="{{asset('tema/images/instagram.png')}}" alt="instagram"></a>
 					</div>
 
 					<div class="col-lg-3 col-sm-3">
 						<h4>Contácto</h4>
 						<p><br>
 							<span class="glyphicon glyphicon-map-marker"></span> Cr27#72-80, Barranquilla <br>
-							<span class="glyphicon glyphicon-envelope"></span> Informacion@conipal.info<br>
-							<span class="glyphicon glyphicon-earphone"></span> (035) 3622386 - (+57) 300 294 6261</p>
+							<span class="glyphicon glyphicon-envelope"></span> info@conipal.com.co<br>
+							<span class="glyphicon glyphicon-envelope"></span> alberto.a@conipal.com.co<br>
+							<span class="glyphicon glyphicon-envelope"></span> carlos.vergara@conipal.com.co<br>
+							<span class="glyphicon glyphicon-envelope"></span> ever.a@conipal.com.co<br>
+							<span class="glyphicon glyphicon-envelope"></span> ever.angulo@conipal.com.co<br>
+							<span class="glyphicon glyphicon-envelope"></span> jesica.b@conipal.com.co<br>
+							<span class="glyphicon glyphicon-earphone"></span> (035) 3622386 - <span class="glyphicon glyphicon-whatsapp"></span> (+57) 300 294 6261</p>
 					</div>
 				</center>
 			</div>
 			<center>
-				<p class="copyright">2017 Stids.com.co	</p>
+				<a href="https://www.facebook.com/Stids.SAS/"><p class="copyright">2017 Stids.com.co</p></a>
 			</center>
 		</div>
 	</div>
