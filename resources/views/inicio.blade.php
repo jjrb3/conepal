@@ -159,9 +159,9 @@
 		<div class="spacer">
 			<div class="row">
 				<div class="col-lg-12 col-sm-9 recent-view">
-					<center><h3>Contamos</h3>
+					<center><h3>Que somos</h3>
 					<p>Somos la empresa numero 1 en compra, venta y alquileres de propiedades en Colombia
-						para mas informacion dar click en <br><a style="color: #df0023;" href="nosotros">Ver Mas</a></p>
+					   para mas información dar click en <br><a style="color: #df0023;" href="nosotros">Ver Mas</a></p>
 					</center>
 				</div>
 			</div>
