@@ -110,7 +110,7 @@
 				</center>
 			</div>
 			<center>
-				<a href="https://www.facebook.com/Stids.SAS/"><p class="copyright">Stids.com.co</p></a>
+				<a href="https://www.facebook.com/Stids.SAS/"><p class="copyright">asdStids.com.co</p></a>
 			</center>
 		</div>
 	</div>
