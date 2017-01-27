@@ -97,7 +97,7 @@
 
 					<div class="col-lg-3 col-sm-3">
 						<h4>Contácto</h4>
-						<p><b>Bootstrap Realestate Inc.</b><br>
+						<p><br>
 							<span class="glyphicon glyphicon-map-marker"></span> Cr27#72-80, Barranquilla <br>
 							<span class="glyphicon glyphicon-envelope"></span> Informacion@conipal.info<br>
 							<span class="glyphicon glyphicon-earphone"></span> (035) 3622386 - (+57) 300 294 6261</p>
