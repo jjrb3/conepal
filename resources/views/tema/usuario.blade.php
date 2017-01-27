@@ -93,6 +93,7 @@
 						<a href="#"><img src="{{asset('tema/images/facebook.png')}}" alt="facebook"></a>
 						<a href="https://twitter.com/conipal_sas"><img src="{{asset('tema/images/twitter.png')}}" alt="twitter"></a>
 						<a href="https://www.instagram.com/conipalcolombia/"><img src="{{asset('tema/images/instagram.png')}}" alt="instagram"></a>
+						<iframe style="border-radius: 5px;" width="100%" height="170" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7833.57310795146!2d-74.81450552370934!3d10.979477425350662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d3d84ee0681%3A0x3ac81e449cec6d9f!2sCra.+27+%2372-80%2C+Barranquilla%2C+Atl%C3%A1ntico%2C+Colombia!5e0!3m2!1ses!2ses!4v1484255039873"></iframe>
 					</div>
 
 					<div class="col-lg-3 col-sm-3">
