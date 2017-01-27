@@ -100,17 +100,17 @@
 						<p><br>
 							<span class="glyphicon glyphicon-map-marker"></span> Cr27#72-80, Barranquilla <br>
 							<span class="glyphicon glyphicon-envelope"></span> info@conipal.com.co<br>
-							<span class="glyphicon glyphicon-envelope"></span> alberto.a@conipal.com.co<br>
+							<span class="glyphicon glyphicon-envelope"></span> jesica.b@conipal.com.co<br>
 							<span class="glyphicon glyphicon-envelope"></span> carlos.vergara@conipal.com.co<br>
 							<span class="glyphicon glyphicon-envelope"></span> ever.a@conipal.com.co<br>
 							<span class="glyphicon glyphicon-envelope"></span> ever.angulo@conipal.com.co<br>
-							<span class="glyphicon glyphicon-envelope"></span> jesica.b@conipal.com.co<br>
-							<span class="glyphicon glyphicon-earphone"></span> (035) 3622386 - <span class="glyphicon glyphicon-whatsapp"></span> (+57) 300 294 6261</p>
+							<span class="glyphicon glyphicon-envelope"></span> alberto.a@conipal.com.co<br>
+							<span class="glyphicon glyphicon-earphone"></span> (035) 3622386 - <span class="glyphicon glyphicon-phone"></span> (+57) 300 294 6261</p>
 					</div>
 				</center>
 			</div>
 			<center>
-				<a href="https://www.facebook.com/Stids.SAS/"><p class="copyright">2017 Stids.com.co</p></a>
+				<a href="https://www.facebook.com/Stids.SAS/"><p class="copyright">Stids.com.co</p></a>
 			</center>
 		</div>
 	</div>
