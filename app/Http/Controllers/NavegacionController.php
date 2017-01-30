@@ -49,6 +49,11 @@ class NavegacionController extends Controller
         $pagina === "nosotros" ? $this->menu .= $this->seleccion : "";
         $this->menu .= '><a href="nosotros">Nosotros</a></li>';
 
+
+        $this->menu .= '<li';
+        $pagina === "servicios" ? $this->menu .= $this->seleccion : "";
+        $this->menu .= '><a href="servicios">servicios</a></li>';
+
         $this->menu .= '<li';
         $pagina === "buscador" ? $this->menu .= $this->seleccion : "";
         $pagina === "detalle"  ? $this->menu .= $this->seleccion : "";
