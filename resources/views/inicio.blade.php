@@ -123,7 +123,7 @@
 									<div class="image-holder"><img src="{{$url}}recursos/imagen_inmueble/{{$inmuebles["imagenes"][$inmueble["id"]][0]}}	" class="img-responsive" alt="properties" style="width:198px;height:91px"/>
 										<div class="status sold">{{$inmueble['estado_inmueble']}}</div>
 									</div>
-									<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
+									<h4 style="color: #df0023;">Ahora en:</h4>
 									<p class="price">Precio: $ {{number_format($inmueble['valor'])}}</p>
 									<p class="price">Precio: {{$inmueble['nombre']}}</p>
 									<a class="btn btn-primary" href="detalle?id={{$inmueble['id']}}">Ver Detalles</a>
@@ -159,7 +159,7 @@
 		<div class="spacer">
 			<div class="row">
 				<div class="col-lg-12 col-sm-9 recent-view">
-					<center><h3>Que somos</h3>
+					<center><h3>Quienes somos</h3>
 					<p>Somos la empresa numero 1 en compra, venta y alquileres de propiedades en Colombia
 					   para mas información dar click en <br><a style="color: #df0023;" href="nosotros">Ver Mas</a></p>
 					</center>
