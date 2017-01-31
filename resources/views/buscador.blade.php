@@ -79,7 +79,7 @@
 											<div class="image-holder"><img src="{{$url}}recursos/imagen_inmueble/{{$inmuebles["imagenes"][$inmueble["id"]][0]}}	" class="img-responsive" alt="properties" style="width:242.48px;height:156.16px"/>
 												<div class="status sold">{{$inmueble['estado_inmueble']}}</div>
 											</div>
-											<h4><a style="color: #df0023;" href="property-detail.php">Ahora en:</a></h4>
+											<h4 style="color: #df0023;">Ahora en:</h4>
 											<p class="price">Precio: $ {{number_format($inmueble['valor'])}}</p>
 											<p class="price">Precio: {{$inmueble['nombre']}}</p>
 											<a class="btn btn-primary" href="detalle?id={{$inmueble['id']}}">Ver Detalles</a>
